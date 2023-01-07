@@ -1,0 +1,51 @@
+@import "partials/default";
+@import "partials/variables";
+@import "partials/colors";
+@import "partials/mixins";
+
+// Navbar 
+.navbar {
+    width: 100%;
+    height: 5rem;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    border-bottom: 1px solid $text-color-p;
+
+    .toggle-btn {
+        display: none;
+    }
+
+    .navbar-brand {
+        padding: 0.8rem 0;
+
+        a {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: $color-secondary;
+        }
+    }
+
+    .navbar-navs-parent {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: blueviolet;
+
+        .navbar-navs {
+            display: flex;
+            gap: 2rem;
+
+            a {
+                color: $text-color-secondary;
+                line-height: 1.5;
+
+                font: {
+                    size: $font-large;
+                    weight: 600;
+                }
+            }
+        }
+    }
+}

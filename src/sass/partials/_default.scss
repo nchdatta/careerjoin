@@ -1,0 +1,44 @@
+@import "variables";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: {
+        family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+            sans-serif;
+        size: 1rem;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-xl {
+    font-size: $font-xlarge;
+}
+
+.text-lg {
+    font-size: $font-large;
+}
+
+.text-normal {
+    font-size: $font-normal;
+}
+
+.text-sm {
+    font-size: $font-small;
+}
+
+.text-xs {
+    font-size: $font-xsmall;
+}
