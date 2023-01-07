@@ -1,25 +1,33 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBullhorn, faPlusCircle, faBars, faClose, } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
+import NavLinkCustom from '../../components/NavLinkCustom';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const menus = [
+        { id: 1001, label: "Search jobs", to: '/', icon: faSearch },
+        { id: 1002, label: "Post a job", to: '/post-job', icon: faBullhorn },
+        { id: 1003, label: "Post your CV", to: '/post-cv', icon: faPlusCircle },
+    ];
 
     return (
         <header>
             <nav className='navbar'>
                 <div className='navbar-brand'>
-                    <a href="/">careerjoin</a>
+                    <Link to="/">careerjoin</Link>
                 </div>
                 <FontAwesomeIcon icon={faBars} size='xl' onClick={() => setIsOpen(!isOpen)} className='open-menu' />
                 <div className="navbar-navs-parent">
                     <ul className='navbar-navs'>
-                        <li><a href="/" className='active'><FontAwesomeIcon icon={faSearch} /> Search jobs</a></li>
-                        <li><a href="/"><FontAwesomeIcon icon={faBullhorn} /> Post a job</a></li>
+                        <li><NavLinkCustom label='Search jobs' to='/' icon={faSearch} /></li>
+                        <li><NavLinkCustom label='Post a job' to='/post-job' icon={faBullhorn} /></li>
                     </ul>
                     <ul className='navbar-navs'>
-                        <li><a href="/"><FontAwesomeIcon icon={faPlusCircle} /> Post your CV</a></li>
-                        <li><p className='btn'>Sign in</p></li>
+                        <li><NavLinkCustom label='Post your CV' to="post-cv" icon={faPlusCircle} /></li>
+                        <li><NavLinkCustom label='Sign in' to='login' className='btn' /></li>
                     </ul>
                 </div>
             </nav>
@@ -27,10 +35,10 @@ const Navbar = () => {
             <div className={`navbar-navs-parent-mobile ${isOpen && 'block'}`}>
                 <FontAwesomeIcon icon={faClose} size='2x' onClick={() => setIsOpen(!isOpen)} className='close-menu' />
                 <ul className='navbar-navs'>
-                    <li><a href="/" className='active'><FontAwesomeIcon icon={faSearch} /> Search jobs</a></li>
-                    <li><a href="/"><FontAwesomeIcon icon={faBullhorn} /> Post a job</a></li>
-                    <li><a href="/"><FontAwesomeIcon icon={faPlusCircle} /> Post your CV</a></li>
-                    <li><p className='btn'>Sign in</p></li>
+                    {menus.map(menu => <li key={menu.id} >
+                        <NavLinkCustom label={menu.label} to={menu.to} icon={menu.icon} />
+                    </li>)}
+                    <li><NavLinkCustom label='Sign in' to='login' className='btn' /></li>
                 </ul>
             </div>
         </header>

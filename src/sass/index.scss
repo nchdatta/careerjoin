@@ -55,16 +55,20 @@
 
                 &.active::after {
                     content: '';
-                    width: 50%;
+                    width: 35%;
                     height: 1px;
                     background-color: $color-secondary;
                     position: absolute;
                     bottom: -5px;
-                    left: 20px;
+                    left: 1.5rem;
                 }
 
                 &.hover {
                     color: $text-color-primary;
+                }
+
+                &.btn {
+                    color: $text-white;
                 }
             }
 
@@ -77,6 +81,31 @@
     display: none;
 }
 
+
+// Not found 404 
+.not-found {
+    @include content-center(column);
+
+    h2 {
+        color: $text-color-primary;
+        font-size: $font-xlarge;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+    }
+
+    p {
+        color: $text-color-p;
+        font-size: $font-small;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+}
+
+// Loading component 
+.loading-wrap {
+    @include content-center;
+    @import "partials/loading";
+}
 
 
 // Responsive codes 
