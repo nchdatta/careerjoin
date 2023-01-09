@@ -88,7 +88,6 @@ input::placeholder {
 .navbar {
   width: 100%;
   height: 5rem;
-  padding: 0 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,6 +95,7 @@ input::placeholder {
       -ms-flex-align: center;
           align-items: center;
   gap: 3rem;
+  padding: 0 3rem;
   border-bottom: 1px solid #e1e3eb;
 }
 
@@ -110,6 +110,7 @@ input::placeholder {
 .navbar .navbar-brand a {
   font-size: 2.5rem;
   font-weight: 700;
+  line-height: 1.5;
   color: #2d74c8;
 }
 
@@ -118,12 +119,17 @@ input::placeholder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
 }
 
 .navbar-navs {
@@ -138,11 +144,11 @@ input::placeholder {
 
 .navbar-navs a:not(.login-btn) {
   display: block;
-  color: #4b4956;
-  line-height: 1.5;
   position: relative;
   font-size: 1rem;
   font-weight: 600;
+  line-height: 1.5;
+  color: #4b4956;
 }
 
 .navbar-navs a:not(.login-btn).active {
@@ -186,16 +192,18 @@ input::placeholder {
 }
 
 .not-found h2 {
-  color: #000000;
   font-size: 2rem;
   font-weight: 700;
+  line-height: 1.5;
+  color: #000000;
   margin-bottom: 0.8rem;
 }
 
 .not-found p {
-  color: #74737e;
   font-size: 0.875rem;
   font-weight: 400;
+  line-height: 1.5;
+  color: #74737e;
   margin-bottom: 1rem;
 }
 
@@ -209,6 +217,10 @@ footer .footer-navs-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -216,12 +228,14 @@ footer .footer-navs-wrap {
       -ms-flex-align: center;
           align-items: center;
   gap: 2rem;
+  gap: 2rem;
   padding-bottom: 0.5rem;
 }
 
 footer .footer-navs-wrap .footer-brand a {
   font-size: 1.4rem;
   font-weight: 700;
+  line-height: 1.5;
   color: #2d74c8;
 }
 
@@ -229,15 +243,24 @@ footer .footer-navs-wrap .footer-navs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 2rem;
   gap: 1rem;
 }
 
 footer .footer-navs-wrap .footer-navs a {
   font-size: 1rem;
   font-weight: 400;
+  line-height: 1.5;
   color: #4b4956;
 }
 
@@ -249,6 +272,7 @@ footer .copyright {
 footer .copyright p {
   font-size: 0.875rem;
   font-weight: 400;
+  line-height: 1.5;
   color: #74737e;
   text-transform: capitalize;
 }
@@ -265,10 +289,13 @@ main {
 }
 
 #home .search-jobs-wrap .search-jobs {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -276,6 +303,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   gap: 1rem;
+  width: 100%;
   padding: 1rem 0.5rem;
   border: 2px solid #428ee6;
   border-radius: 0.3rem;
@@ -296,6 +324,7 @@ main {
 #home .search-jobs-wrap .search-jobs .search-wrap label {
   font-size: 1.4rem;
   font-weight: 700;
+  line-height: 1.5;
   color: #4b4956;
   position: absolute;
   top: 0;
@@ -315,6 +344,7 @@ main {
 #home .search-jobs-wrap .search-jobs .search-btn {
   font-size: 1rem;
   font-weight: 400;
+  line-height: 1.5;
   color: #ffffff;
   width: auto;
   border: 0;
@@ -327,6 +357,7 @@ main {
 #home .published-jobs {
   font-size: 1rem;
   font-weight: 500;
+  line-height: 1.5;
   color: #4b4956;
 }
 
@@ -375,6 +406,7 @@ main {
 #home .cards-wrap .card div h2 {
   font-size: 1.4rem;
   font-weight: 700;
+  line-height: 1.5;
   color: #000000;
   margin-bottom: 0.625rem;
 }
@@ -382,6 +414,7 @@ main {
 #home .cards-wrap .card div p {
   font-size: 1rem;
   font-weight: 400;
+  line-height: 1.5;
   color: #74737e;
 }
 

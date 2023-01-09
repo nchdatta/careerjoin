@@ -9,20 +9,25 @@
     flex-direction: $direction;
 }
 
-@mixin font-sizing($size, $weight, $color) {
+@mixin font-sizing($size, $color, $weight: 400) {
     font-size: $size;
     font-weight: $weight;
+    line-height: 1.5;
     color: $color;
 }
 
-@mixin flex($gap: 2rem, $dir: row) {
+@mixin flex($gap: 2rem, $dir: row, $justify: space-between) {
     display: flex;
     flex-direction: $dir;
-    justify-content: space-between;
+    justify-content: $justify;
     align-items: center;
     gap: $gap;
 }
 
 @mixin border($color: $border-color-1, $size: 1px) {
     border: $size solid $color;
+}
+
+@mixin border-dir($dir: top, $color: $border-color-1, $size: 1px) {
+    border-#{$dir}: $size solid $color;
 }

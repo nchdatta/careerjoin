@@ -7,11 +7,11 @@
 .navbar {
     width: 100%;
     height: 5rem;
-    padding: 0 3rem;
     display: flex;
     align-items: center;
     gap: 3rem;
-    border-bottom: 1px solid $border-color-2;
+    padding: 0 3rem;
+    @include border-dir(bottom, $border-color-2);
 
     .open-menu {
         display: none;
@@ -21,17 +21,13 @@
         padding: 0.8rem 0;
 
         a {
-            font-size: $font-xxlarge;
-            font-weight: 700;
-            color: $color-secondary;
+            @include font-sizing($font-xxlarge, $color-secondary, 700);
         }
     }
 
     .navbar-navs-parent {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex();
     }
 }
 
@@ -42,14 +38,8 @@
 
     a:not(.login-btn) {
         display: block;
-        color: $text-color-secondary;
-        line-height: 1.5;
         position: relative;
-
-        font: {
-            size: $font-normal;
-            weight: 600;
-        }
+        @include font-sizing($font-normal, $text-color-secondary, 600);
 
         &.active {
             color: $text-color-primary;
@@ -86,16 +76,12 @@
     @include content-center(column);
 
     h2 {
-        color: $text-color-primary;
-        font-size: $font-xlarge;
-        font-weight: 700;
+        @include font-sizing($font-xlarge, $text-color-primary, 700);
         margin-bottom: 0.8rem;
     }
 
     p {
-        color: $text-color-p;
-        font-size: $font-small;
-        font-weight: 400;
+        @include font-sizing($font-small, $text-color-p);
         margin-bottom: 1rem;
     }
 }
@@ -104,44 +90,35 @@
 footer {
     width: 100%;
     padding: 1rem 3rem;
-    border-top: 1px solid $border-color-2;
+    @include border-dir(top, $border-color-2);
 
     .footer-navs-wrap {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        @include flex($justify: flex-start);
         gap: 2rem;
         padding-bottom: 0.5rem;
 
         .footer-brand {
             a {
-                font-size: $font-large;
-                font-weight: 700;
-                color: $color-secondary;
+                @include font-sizing($font-large, $color-secondary, 700);
             }
         }
 
         .footer-navs {
-            display: flex;
-            align-items: center;
+            @include flex($justify: flex-start);
             gap: 1rem;
 
             a {
-                font-size: $font-normal;
-                font-weight: 400;
-                color: $text-color-secondary;
+                @include font-sizing($font-normal, $text-color-secondary);
             }
         }
     }
 
     .copyright {
-        border-top: 1px solid $border-color-2;
+        @include border-dir(top, $border-color-2);
         padding: 0.5rem 0;
 
         p {
-            font-size: $font-small;
-            font-weight: 400;
-            color: $text-color-p;
+            @include font-sizing($font-small, $text-color-p);
             text-transform: capitalize;
         }
     }
@@ -163,23 +140,20 @@ main {
         position: relative;
 
         .search-jobs {
+            @include flex(1rem);
             width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
             padding: 1rem 0.5rem;
-            border: 2px solid $color-primary;
+            @include border($color-primary, 2px);
             border-radius: 0.3rem;
 
             .search-wrap {
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                border-right: 1px solid $border-color-2;
+                @include border-dir(right, $border-color-2);
 
                 label {
-                    @include font-sizing($font-large, 700, $text-color-secondary);
+                    @include font-sizing($font-large, $text-color-secondary, 700);
                     position: absolute;
                     top: 0;
                 }
@@ -197,7 +171,7 @@ main {
             }
 
             .search-btn {
-                @include font-sizing($font-normal, 400, $text-white);
+                @include font-sizing($font-normal, $text-white);
                 width: auto;
                 border: 0;
                 outline: 0;
@@ -210,7 +184,7 @@ main {
 
     // published jobs 
     .published-jobs {
-        @include font-sizing($font-normal, 500, $text-color-secondary);
+        @include font-sizing($font-normal, $text-color-secondary, 500);
     }
 
     // Cards section 
@@ -229,12 +203,12 @@ main {
 
             div {
                 h2 {
-                    @include font-sizing($font-large, 700, $text-color-primary);
+                    @include font-sizing($font-large, $text-color-primary, 700);
                     margin-bottom: 0.625rem;
                 }
 
                 p {
-                    @include font-sizing($font-normal, 400, $text-color-p);
+                    @include font-sizing($font-normal, $text-color-p);
                 }
             }
 
