@@ -1,3 +1,6 @@
+@import "colors";
+
+
 @media screen and (max-width: 767px) {
 
     // Navbar 
@@ -41,6 +44,60 @@
             gap: 1.5rem;
         }
 
+    }
+
+
+    // Main content area 
+    main {
+        width: 100%;
+        padding: 0 0.625rem;
+    }
+
+    #home {
+
+        // Search job 
+        .search-jobs-wrap {
+            padding: 0;
+
+            .search-jobs {
+                flex-direction: column;
+                gap: 3rem;
+                border: 0;
+                padding: 1rem 0;
+
+                .search-wrap {
+                    position: relative;
+                    border-right: 0;
+                    border: 2px solid $color-primary;
+                    border-radius: 4px;
+
+                    label {
+                        position: absolute;
+                        top: -2.3rem;
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .faLocationCrosshairs {
+                    position: absolute;
+                    right: 0.5rem;
+                    top: 5.5rem;
+                }
+
+                .search-btn {
+                    width: 100%;
+                }
+            }
+        }
+
+        // Cards section 
+        .cards-wrap {
+            @include flex(2rem, column);
+
+            .card {
+                width: 100%;
+            }
+        }
     }
 
 

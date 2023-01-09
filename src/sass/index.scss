@@ -148,6 +148,110 @@ footer {
 }
 
 
+// Main content area 
+main {
+    width: 70%;
+    min-height: 80vh;
+    margin: 3rem auto;
+}
+
+#home {
+
+    // Search job
+    .search-jobs-wrap {
+        padding: 2.5rem 0 1rem;
+        position: relative;
+
+        .search-jobs {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0.5rem;
+            border: 2px solid $color-primary;
+            border-radius: 0.3rem;
+
+            .search-wrap {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                border-right: 1px solid $border-color-2;
+
+                label {
+                    @include font-sizing($font-large, 700, $text-color-secondary);
+                    position: absolute;
+                    top: 0;
+                }
+
+                .search-field {
+                    border: 0;
+                    outline: 0;
+                    padding: 1rem 0.8rem;
+                    font-size: $font-small;
+                }
+            }
+
+            .faLocationCrosshairs {
+                color: $text-color-p;
+            }
+
+            .search-btn {
+                @include font-sizing($font-normal, 400, $text-white);
+                width: auto;
+                border: 0;
+                outline: 0;
+                padding: 1rem 3rem;
+                background-color: $color-primary;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+
+    // published jobs 
+    .published-jobs {
+        @include font-sizing($font-normal, 500, $text-color-secondary);
+    }
+
+    // Cards section 
+    .cards-wrap {
+        @include flex(2rem);
+        margin: 4rem 0;
+
+        .card {
+            @include flex;
+            @include border;
+            border-radius: .3rem;
+            width: 50%;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            div {
+                h2 {
+                    @include font-sizing($font-large, 700, $text-color-primary);
+                    margin-bottom: 0.625rem;
+                }
+
+                p {
+                    @include font-sizing($font-normal, 400, $text-color-p);
+                }
+            }
+
+            img {
+                width: 5.5rem;
+                object-fit: cover;
+            }
+
+            &:hover {
+                @include border($bg-color-light);
+                background-color: $bg-color-light;
+            }
+        }
+    }
+}
+
+
 
 
 // Loading component 

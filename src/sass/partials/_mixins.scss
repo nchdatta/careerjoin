@@ -1,3 +1,5 @@
+@import 'colors';
+
 @mixin content-center($direction: row) {
     width: 100%;
     min-height: 80vh;
@@ -5,4 +7,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: $direction;
+}
+
+@mixin font-sizing($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin flex($gap: 2rem, $dir: row) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: space-between;
+    align-items: center;
+    gap: $gap;
+}
+
+@mixin border($color: $border-color-1, $size: 1px) {
+    border: $size solid $color;
 }

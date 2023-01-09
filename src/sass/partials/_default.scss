@@ -24,6 +24,10 @@ a {
     text-decoration: none;
 }
 
+input::placeholder {
+    color: $placeholder-color;
+}
+
 .text-xl {
     font-size: $font-xlarge;
 }
@@ -50,6 +54,10 @@ a {
 
 .mr-1 {
     margin-right: 0.5rem;
+}
+
+.text-primary {
+    color: $color-primary;
 }
 
 .btn {
