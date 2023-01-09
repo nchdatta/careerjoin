@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     gap: 3rem;
-    border-bottom: 1px solid rgb(234, 234, 234);
+    border-bottom: 1px solid $border-color-2;
 
     .open-menu {
         display: none;
@@ -21,7 +21,7 @@
         padding: 0.8rem 0;
 
         a {
-            font-size: 2.5rem;
+            font-size: $font-xxlarge;
             font-weight: 700;
             color: $color-secondary;
         }
@@ -40,7 +40,7 @@
     align-items: center;
     gap: 2rem;
 
-    a {
+    a:not(.login-btn) {
         display: block;
         color: $text-color-secondary;
         line-height: 1.5;
@@ -68,13 +68,11 @@
         &.hover {
             color: $text-color-primary;
         }
-
-        &.btn {
-            color: $text-white;
-        }
     }
 
-
+    .login-btn {
+        @extend .btn;
+    }
 }
 
 
@@ -101,6 +99,56 @@
         margin-bottom: 1rem;
     }
 }
+
+// Footer 
+footer {
+    width: 100%;
+    padding: 1rem 3rem;
+    border-top: 1px solid $border-color-2;
+
+    .footer-navs-wrap {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+        padding-bottom: 0.5rem;
+
+        .footer-brand {
+            a {
+                font-size: $font-large;
+                font-weight: 700;
+                color: $color-secondary;
+            }
+        }
+
+        .footer-navs {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            a {
+                font-size: $font-normal;
+                font-weight: 400;
+                color: $text-color-secondary;
+            }
+        }
+    }
+
+    .copyright {
+        border-top: 1px solid $border-color-2;
+        padding: 0.5rem 0;
+
+        p {
+            font-size: $font-small;
+            font-weight: 400;
+            color: $text-color-p;
+            text-transform: capitalize;
+        }
+    }
+}
+
+
+
 
 // Loading component 
 .loading-wrap {

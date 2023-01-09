@@ -3,6 +3,7 @@ import { faSearch, faBullhorn, faPlusCircle, faBars, faClose, } from '@fortaweso
 import React, { useState } from 'react';
 import NavLinkCustom from '../../components/NavLinkCustom';
 import { Link } from 'react-router-dom';
+import NavigationButton from '../../components/NavigationButton';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = () => {
                     </ul>
                     <ul className='navbar-navs'>
                         <li><NavLinkCustom label='Post your CV' to="post-cv" icon={faPlusCircle} /></li>
-                        <li><NavLinkCustom label='Sign in' to='login' className='btn' /></li>
+                        <li><NavigationButton label='Sign in' to='login' className='login-btn' /></li>
                     </ul>
                 </div>
             </nav>
@@ -38,7 +39,7 @@ const Navbar = () => {
                     {menus.map(menu => <li key={menu.id} >
                         <NavLinkCustom label={menu.label} to={menu.to} icon={menu.icon} />
                     </li>)}
-                    <li><NavLinkCustom label='Sign in' to='login' className='btn' /></li>
+                    <li><NavigationButton label='Sign in' to='login' className='login-btn' /></li>
                 </ul>
             </div>
         </header>
