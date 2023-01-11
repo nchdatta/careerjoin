@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationButton from '../../../components/NavigationButton';
+import NavLinkCustom from '../../../components/NavLinkCustom';
 
 const Card = ({ img, title, subtitle, btnText }) => {
     return (
@@ -12,7 +12,7 @@ const Card = ({ img, title, subtitle, btnText }) => {
                 <p>{subtitle}</p>
             </div>
             <div className='btn-div'>
-                <NavigationButton label={btnText} className='btn' />
+                <NavLinkCustom label={btnText} className='btn' />
             </div>
         </div>
     );

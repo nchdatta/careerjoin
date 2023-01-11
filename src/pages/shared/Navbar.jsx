@@ -4,10 +4,14 @@ import React, { useState } from 'react';
 import NavLinkCustom from '../../components/NavLinkCustom';
 import { Link } from 'react-router-dom';
 import NavigationButton from '../../components/NavigationButton';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Navbar = () => {
-    const user = true;
+    const { user, loginWithRedirect, isAuthenticated, isLoading } = useAuth0();
     const [isOpen, setIsOpen] = useState(false);
+    if (isLoading) {
+        return <div>Loading ...</div>;
+    }
 
     const menus = [
         { id: 1001, label: "Search jobs", to: '/', icon: faSearch },
@@ -30,9 +34,9 @@ const Navbar = () => {
                     <ul className='navbar-navs'>
                         <li><NavLinkCustom label='Post your CV' to="post-cv" icon={faPlusCircle} /></li>
                         {
-                            user
+                            isAuthenticated
                                 ? <li><Link to='/profile'><FontAwesomeIcon icon={faCircleUser} size='2x' /></Link></li>
-                                : <li><NavigationButton label='Sign in' to='login' className='login-btn' /></li>
+                                : <li><NavigationButton handleClick={loginWithRedirect} label='Sign in' className='login-btn' /></li>
                         }
                     </ul>
                 </div>
@@ -45,9 +49,9 @@ const Navbar = () => {
                         <NavLinkCustom label={menu.label} to={menu.to} icon={menu.icon} />
                     </li>)}
                     {
-                        user
+                        isAuthenticated
                             ? <li><Link to='/profile'><FontAwesomeIcon icon={faCircleUser} size='2x' /></Link></li>
-                            : <li><NavigationButton label='Sign in' to='login' className='login-btn' /></li>
+                            : <li><NavigationButton handleClick={loginWithRedirect} label='Sign in' className='login-btn' /></li>
                     }
                 </ul>
             </div>
