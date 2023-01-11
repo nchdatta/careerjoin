@@ -1,5 +1,6 @@
 @import "colors";
 @import "variables";
+@import "mixins";
 
 
 @media screen and (max-width: 767px) {
@@ -193,4 +194,33 @@
             width: 100%;
         }
     }
+
+    // Recruiter page
+    .recruiter-container {
+        .recruiter-cards {
+            .img {
+                display: none;
+            }
+        }
+
+        .recruiter-cards2 {
+            flex-direction: column;
+            padding: 2rem 0;
+
+            &.row-reverse {
+                flex-direction: column;
+            }
+
+            .left-content {
+                width: 100%;
+            }
+        }
+
+        .choose-section {
+            .content {
+                @include grid(1);
+            }
+        }
+    }
+
 }

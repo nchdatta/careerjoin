@@ -31,3 +31,9 @@
 @mixin border-dir($dir: top, $color: $border-color-1, $size: 1px) {
     border-#{$dir}: $size solid $color;
 }
+
+@mixin grid($cols, $gap: 2rem) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    gap: $gap;
+}

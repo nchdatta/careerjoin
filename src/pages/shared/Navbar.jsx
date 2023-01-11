@@ -10,7 +10,7 @@ const Navbar = () => {
 
     const menus = [
         { id: 1001, label: "Search jobs", to: '/', icon: faSearch },
-        { id: 1002, label: "Post a job", to: '/post-job', icon: faBullhorn },
+        { id: 1002, label: "Post a job", to: '/recruiter', icon: faBullhorn },
         { id: 1003, label: "Post your CV", to: '/post-cv', icon: faPlusCircle },
     ];
 
@@ -24,7 +24,7 @@ const Navbar = () => {
                 <div className="navbar-navs-parent">
                     <ul className='navbar-navs'>
                         <li><NavLinkCustom label='Search jobs' to='/' icon={faSearch} /></li>
-                        <li><NavLinkCustom label='Post a job' to='/post-job' icon={faBullhorn} /></li>
+                        <li><NavLinkCustom label='Post a job' to='/recruiter' icon={faBullhorn} /></li>
                     </ul>
                     <ul className='navbar-navs'>
                         <li><NavLinkCustom label='Post your CV' to="post-cv" icon={faPlusCircle} /></li>

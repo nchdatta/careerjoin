@@ -17,6 +17,10 @@ body {
     }
 }
 
+img {
+    width: 100%;
+}
+
 a {
     text-decoration: none;
 }
@@ -74,6 +78,11 @@ select {
 
 .text-primary {
     color: $color-primary;
+}
+
+.icon {
+    @include font-sizing($font-medium, $color-secondary);
+    padding-right: 0.5rem;
 }
 
 .btn {

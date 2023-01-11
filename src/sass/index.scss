@@ -421,11 +421,7 @@ main {
             .meta-top {
                 @include flex(1rem, row, flex-start);
                 @include font-sizing($font-normal, $text-color-secondary, 500);
-
-                .icon {
-                    @include font-sizing($font-medium, $color-secondary);
-                    padding-right: 0.5rem;
-                }
+                flex-wrap: wrap;
             }
 
             .meta-bottom {
@@ -479,6 +475,131 @@ main {
                 padding: 0.625rem 0;
                 width: 100%;
             }
+        }
+    }
+}
+
+
+// Post job page 
+.recruiter-container {
+    .header {
+        @include flex(1rem, column);
+
+        img {
+            width: 15%;
+        }
+
+        h1 {
+            @include font-sizing($font-xlarge, $text-color-primary, 700);
+        }
+
+        p {
+            @include font-sizing($font-normal, $text-color-p);
+            text-align: center;
+        }
+    }
+
+    .recruiter-cards {
+        @include flex(4rem, row, space-around);
+        margin: 4rem 0;
+
+        &.row-reverse {
+            flex-direction: row-reverse;
+            @include border-dir(top, $border-color-2);
+            padding: 5rem 0;
+        }
+
+        .left-content {
+            @include flex(1.2rem, column, flex-start, stretch);
+
+            h2 {
+                @include font-sizing($font-xlarge, $text-color-primary, 600);
+            }
+
+            h3 {
+                @include font-sizing($font-large, $text-color-secondary);
+                margin-top: -1rem;
+            }
+
+            p {
+                margin-bottom: 0.625rem;
+                @include font-sizing($font-normal, $text-color-secondary);
+            }
+
+            .action-btns {
+                @include flex(1rem, row, flex-start);
+            }
+        }
+
+    }
+
+    .recruiter-cards2 {
+        @include flex(4rem, row, space-around);
+        margin: 4rem 0;
+        padding: 5rem 0;
+
+        &.row-reverse {
+            flex-direction: row-reverse;
+            @include border-dir(top, $border-color-2);
+        }
+
+        .left-content {
+            width: 50%;
+            @include flex(1.2rem, column, $align: flex-start);
+
+            h3 {
+                @include font-sizing($font-normal, $text-color-secondary, 500);
+            }
+
+            h2 {
+                @include font-sizing($font-xlarge, $text-color-primary, 600);
+                margin-top: -1rem;
+            }
+
+            p {
+                margin-bottom: 0.625rem;
+                @include font-sizing($font-normal, $text-color-secondary);
+            }
+        }
+    }
+
+    .choose-section {
+        .title {
+            @include font-sizing($font-large, $text-color-primary, 700);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .content {
+            @include grid(3, 3rem);
+
+            .card {
+                @include flex(1.2rem, column);
+
+                h3 {
+                    @include font-sizing($font-medium, $text-color-primary, 700);
+                }
+
+                p {
+                    @include font-sizing($font-small, $text-color-p);
+                    text-align: center;
+                }
+
+                img {
+                    width: 2.5rem;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    .contact {
+        margin: 6rem auto;
+        text-align: center;
+
+        .title {
+            @include font-sizing($font-large, $text-color-primary, 700);
+            margin-bottom: 1rem;
         }
     }
 }

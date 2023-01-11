@@ -10,6 +10,10 @@ body {
   font-size: 1rem;
 }
 
+img {
+  width: 100%;
+}
+
 a {
   text-decoration: none;
 }
@@ -79,6 +83,14 @@ select {
 
 .text-primary {
   color: #428ee6;
+}
+
+.icon {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #2d74c8;
+  padding-right: 0.5rem;
 }
 
 .btn, .navbar-navs .login-btn, .jobs-container .jobs-found-container .header-action div .all, .job-details-container .job-action .appy-now {
@@ -815,14 +827,8 @@ main {
   font-weight: 500;
   line-height: 1.5;
   color: #4b4956;
-}
-
-.job-details-container .details-header .job-meta .meta-top .icon {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #2d74c8;
-  padding-right: 0.5rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .job-details-container .details-header .job-meta .meta-bottom {
@@ -914,6 +920,260 @@ main {
 .job-details-container .job-action .save-share button {
   padding: 0.625rem 0;
   width: 100%;
+}
+
+.recruiter-container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.recruiter-container .header img {
+  width: 15%;
+}
+
+.recruiter-container .header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.recruiter-container .header p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #74737e;
+  text-align: center;
+}
+
+.recruiter-container .recruiter-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4rem;
+  margin: 4rem 0;
+}
+
+.recruiter-container .recruiter-cards.row-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  border-top: 1px solid #e1e3eb;
+  padding: 5rem 0;
+}
+
+.recruiter-container .recruiter-cards .left-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 1.2rem;
+}
+
+.recruiter-container .recruiter-cards .left-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.recruiter-container .recruiter-cards .left-content h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4b4956;
+  margin-top: -1rem;
+}
+
+.recruiter-container .recruiter-cards .left-content p {
+  margin-bottom: 0.625rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4b4956;
+}
+
+.recruiter-container .recruiter-cards .left-content .action-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.recruiter-container .recruiter-cards2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4rem;
+  margin: 4rem 0;
+  padding: 5rem 0;
+}
+
+.recruiter-container .recruiter-cards2.row-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  border-top: 1px solid #e1e3eb;
+}
+
+.recruiter-container .recruiter-cards2 .left-content {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.recruiter-container .recruiter-cards2 .left-content h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #4b4956;
+}
+
+.recruiter-container .recruiter-cards2 .left-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #000000;
+  margin-top: -1rem;
+}
+
+.recruiter-container .recruiter-cards2 .left-content p {
+  margin-bottom: 0.625rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4b4956;
+}
+
+.recruiter-container .choose-section .title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.recruiter-container .choose-section .content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.recruiter-container .choose-section .content .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.2rem;
+}
+
+.recruiter-container .choose-section .content .card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.recruiter-container .choose-section .content .card p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #74737e;
+  text-align: center;
+}
+
+.recruiter-container .choose-section .content .card img {
+  width: 2.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.recruiter-container .contact {
+  margin: 6rem auto;
+  text-align: center;
+}
+
+.recruiter-container .contact .title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 1rem;
 }
 
 .loading-wrap {
@@ -1175,5 +1435,31 @@ main {
   }
   .job-details-container .job-action {
     width: 100%;
+  }
+  .recruiter-container .recruiter-cards .img {
+    display: none;
+  }
+  .recruiter-container .recruiter-cards2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 2rem 0;
+  }
+  .recruiter-container .recruiter-cards2.row-reverse {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .recruiter-container .recruiter-cards2 .left-content {
+    width: 100%;
+  }
+  .recruiter-container .choose-section .content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
   }
 }
