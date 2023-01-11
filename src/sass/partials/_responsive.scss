@@ -245,4 +245,23 @@
         }
     }
 
+
+    // Dashboard sidebar 
+    .dasboard-container {
+        @include flex(1rem, row, flex-start, flex-start);
+
+        .dashboard-sidebar {
+            .navbar-navs {
+                .nav-label {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .change-password-form {
+        width: 100%;
+    }
+
+
 }

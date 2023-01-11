@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import NotFound from "./pages/ErrorPage/NotFound";
 import Home from "./pages/home/Home";
 import Job from "./pages/job/Job";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/recruiter" element={<Recruiter />} />
           <Route path="/post-cv" element={<PostCV />} />
+          <Route path="/profile/*" element={<Dashboard />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/job/:id" element={<Job />} />
           <Route path="*" element={<NotFound />} />

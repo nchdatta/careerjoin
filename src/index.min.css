@@ -85,12 +85,21 @@ select {
   color: #428ee6;
 }
 
+.bg-danger {
+  background-color: #ea4a4a !important;
+}
+
+.bg-danger:hover {
+  background-color: #d63d3d !important;
+}
+
 .icon {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.5;
   color: #2d74c8;
   padding-right: 0.5rem;
+  cursor: pointer;
 }
 
 .btn, .navbar-navs .login-btn, .jobs-container .jobs-found-container .header-action div .all, .job-details-container .job-action .appy-now {
@@ -109,6 +118,26 @@ select {
 }
 
 .btn:hover, .navbar-navs .login-btn:hover, .jobs-container .jobs-found-container .header-action div .all:hover, .job-details-container .job-action .appy-now:hover {
+  background-color: #2d74c8;
+}
+
+.btn-light {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #428ee6;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-animation: all 0.3s;
+          animation: all 0.3s;
+}
+
+.btn-light:hover {
   background-color: #2d74c8;
 }
 
@@ -140,6 +169,80 @@ select {
   background-color: #e9e9e9;
   padding: 0.2rem 0.8rem;
   border-radius: 1rem;
+}
+
+.input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 0.3rem;
+  margin-bottom: 0.825rem;
+}
+
+.input-group .input-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #4b4956;
+}
+
+.input-group .input-field {
+  display: block;
+  font-size: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #4b4956;
+  padding: 0.5rem 0.4rem;
+  border: 1px solid #c8cad2;
+  border-radius: 5px;
+}
+
+.input-group .input-field::-webkit-input-placeholder {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #a4a4a9;
+}
+
+.input-group .input-field:-ms-input-placeholder {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #a4a4a9;
+}
+
+.input-group .input-field::-ms-input-placeholder {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #a4a4a9;
+}
+
+.input-group .input-field::placeholder {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #a4a4a9;
+}
+
+.input-group .input-field:hover {
+  border: 1px solid #428ee6;
+}
+
+.input-group .input-field:focus {
+  outline: 1px solid #428ee6;
 }
 
 .navbar {
@@ -215,12 +318,12 @@ select {
 
 .navbar-navs a:not(.login-btn).active::after {
   content: '';
-  width: 35%;
+  width: 60%;
   height: 1px;
   background-color: #2d74c8;
   position: absolute;
   bottom: -5px;
-  left: 1.5rem;
+  left: 0;
 }
 
 .navbar-navs a:not(.login-btn).hover {
@@ -1265,6 +1368,187 @@ main {
 
 .postcv-container .cards .card .btn-div .btn, .postcv-container .cards .card .btn-div .navbar-navs .login-btn, .navbar-navs .postcv-container .cards .card .btn-div .login-btn, .postcv-container .cards .card .btn-div .jobs-container .jobs-found-container .header-action div .all, .jobs-container .jobs-found-container .header-action div .postcv-container .cards .card .btn-div .all, .postcv-container .cards .card .btn-div .job-details-container .job-action .appy-now, .job-details-container .job-action .postcv-container .cards .card .btn-div .appy-now {
   padding: 0.7rem 0;
+  -webkit-box-shadow: 0 0 5px #2d74c8;
+          box-shadow: 0 0 5px #2d74c8;
+}
+
+.dasboard-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 2rem;
+}
+
+.dasboard-container .dashboard-sidebar .navbar-navs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1rem;
+}
+
+.dasboard-container .outlet-content {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border-left: 2px solid #e1e3eb;
+  padding: 0 2rem;
+  min-height: 80vh;
+  overflow-x: auto;
+}
+
+.dasboard-container .outlet-content .title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.dasboard-container .outlet-content .title::after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #428ee6;
+  position: absolute;
+}
+
+.dasboard-container .outlet-content .profile .avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  height: 7rem;
+  width: 7rem;
+}
+
+.dasboard-container .outlet-content .profile .avatar p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #4b4956;
+  text-transform: uppercase;
+}
+
+.dasboard-container .outlet-content .profile .personal-details {
+  margin: 1.5rem 0;
+}
+
+.dasboard-container .outlet-content .profile .personal-details h2 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.dasboard-container .outlet-content .profile .personal-details p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4b4956;
+  margin-bottom: 0.3rem;
+}
+
+.dasboard-container .outlet-content .profile .personal-details .address {
+  border-left: 3px solid #e1e3eb;
+  padding: 0 0.5rem;
+  margin-left: 2rem;
+}
+
+.dasboard-container .outlet-content .profile .btn, .dasboard-container .outlet-content .profile .navbar-navs .login-btn, .navbar-navs .dasboard-container .outlet-content .profile .login-btn, .dasboard-container .outlet-content .profile .jobs-container .jobs-found-container .header-action div .all, .jobs-container .jobs-found-container .header-action div .dasboard-container .outlet-content .profile .all, .dasboard-container .outlet-content .profile .job-details-container .job-action .appy-now, .job-details-container .job-action .dasboard-container .outlet-content .profile .appy-now {
+  font-weight: 400;
+}
+
+.dasboard-container .outlet-content .saved-jobs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.dasboard-container .outlet-content .saved-jobs .saved-icon {
+  background-color: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 4rem;
+  font-size: 1.4rem;
+  color: #428ee6;
+}
+
+.dasboard-container .outlet-content .saved-jobs h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.dasboard-container .outlet-content .saved-jobs p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #74737e;
+}
+
+.change-password-form {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 0;
 }
 
 .loading-wrap {
@@ -1579,5 +1863,27 @@ main {
   .postcv-container .cards .card .btn-div {
     width: 70%;
     margin: 0;
+  }
+  .dasboard-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 1rem;
+  }
+  .dasboard-container .dashboard-sidebar .navbar-navs .nav-label {
+    display: none;
+  }
+  .change-password-form {
+    width: 100%;
   }
 }
