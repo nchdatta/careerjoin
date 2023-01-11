@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavLinkCustom = ({ label, to, icon, className }) => {
     return (
-        <NavLink to={to} className={className}>
+        <NavLink to={to} className={className} title={label}>
             <FontAwesomeIcon icon={icon} className='mr-1' />
             <span className='nav-label'>{label}</span>
         </NavLink>

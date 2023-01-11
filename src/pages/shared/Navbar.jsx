@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faBullhorn, faPlusCircle, faBars, faClose, } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faBullhorn, faPlusCircle, faBars, faClose, faCircleUser, } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import NavLinkCustom from '../../components/NavLinkCustom';
 import { Link } from 'react-router-dom';
 import NavigationButton from '../../components/NavigationButton';
 
 const Navbar = () => {
+    const user = true;
     const [isOpen, setIsOpen] = useState(false);
 
     const menus = [
@@ -28,18 +29,26 @@ const Navbar = () => {
                     </ul>
                     <ul className='navbar-navs'>
                         <li><NavLinkCustom label='Post your CV' to="post-cv" icon={faPlusCircle} /></li>
-                        <li><NavigationButton label='Sign in' to='login' className='login-btn' /></li>
+                        {
+                            user
+                                ? <li><Link to='/profile'><FontAwesomeIcon icon={faCircleUser} size='2x' /></Link></li>
+                                : <li><NavigationButton label='Sign in' to='login' className='login-btn' /></li>
+                        }
                     </ul>
                 </div>
             </nav>
 
             <div className={`navbar-navs-parent-mobile ${isOpen && 'block'}`}>
                 <FontAwesomeIcon icon={faClose} size='2x' onClick={() => setIsOpen(!isOpen)} className='close-menu' />
-                <ul className='navbar-navs'>
+                <ul className='navbar-navs' onClick={() => setIsOpen(!isOpen)}>
                     {menus.map(menu => <li key={menu.id} >
                         <NavLinkCustom label={menu.label} to={menu.to} icon={menu.icon} />
                     </li>)}
-                    <li><NavigationButton label='Sign in' to='login' className='login-btn' /></li>
+                    {
+                        user
+                            ? <li><Link to='/profile'><FontAwesomeIcon icon={faCircleUser} size='2x' /></Link></li>
+                            : <li><NavigationButton label='Sign in' to='login' className='login-btn' /></li>
+                    }
                 </ul>
             </div>
         </header>

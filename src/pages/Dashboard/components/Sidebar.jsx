@@ -1,6 +1,8 @@
 import React from 'react';
 import NavLinkCustom from '../../../components/NavLinkCustom';
-import { faPersonRifle, faUnlockKeyhole, faBookmark, faShare, faEnvelope, faFileArchive } from '@fortawesome/free-solid-svg-icons';
+import { faPersonRifle, faUnlockKeyhole, faBookmark, faShare, faEnvelope, faFileArchive, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Sidebar = () => {
     const menus = [
@@ -17,6 +19,7 @@ const Sidebar = () => {
                 {menus.map(menu => <li>
                     <NavLinkCustom label={menu.label} to={menu.to} icon={menu.icon} />
                 </li>)}
+                <li><Link title='Sign out'><FontAwesomeIcon icon={faRightFromBracket} className='mr-1' /><span className='nav-label'>Sign out</span></Link></li>
             </ul>
         </div>
     );
