@@ -1,5 +1,6 @@
 @import "variables";
 @import "colors";
+@import "mixins";
 
 * {
     box-sizing: border-box;
@@ -16,16 +17,23 @@ body {
     }
 }
 
-ul {
-    list-style-type: none;
-}
-
 a {
     text-decoration: none;
 }
 
 input::placeholder {
     color: $placeholder-color;
+}
+
+button {
+    cursor: pointer;
+}
+
+button,
+select {
+    outline: 0;
+    border: 0;
+    background-color: transparent;
 }
 
 .text-xl {
@@ -56,6 +64,14 @@ input::placeholder {
     margin-right: 0.5rem;
 }
 
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+
+.ml-2 {
+    margin-left: 1rem;
+}
+
 .text-primary {
     color: $color-primary;
 }
@@ -69,11 +85,36 @@ input::placeholder {
     border: 0;
     outline: 0;
     border-radius: 2rem;
-    padding: 0.6rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     cursor: pointer;
     animation: all 0.3s;
 
     &:hover {
         background-color: $color-secondary;
     }
+}
+
+.btn-outline {
+    display: block;
+    font-size: $font-normal;
+    font-weight: 500;
+    color: $text-color-primary;
+    outline: 0;
+    border: 2px solid $color-primary;
+    border-radius: 2rem;
+    padding: 0.4rem 2rem;
+    cursor: pointer;
+    animation: all 0.3s;
+
+    &:hover {
+        box-shadow: 0 0 2px $color-secondary;
+    }
+}
+
+.btn-tag {
+    display: inline-block;
+    @include font-sizing($font-small, $text-color-secondary, 500);
+    background-color: $bg-color-1;
+    padding: 0.2rem 0.8rem;
+    border-radius: 1rem;
 }

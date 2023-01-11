@@ -35,11 +35,12 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+    list-style-type: none;
 
     a:not(.login-btn) {
         display: block;
-        position: relative;
         @include font-sizing($font-normal, $text-color-secondary, 600);
+        position: relative;
 
         &.active {
             color: $text-color-primary;
@@ -76,7 +77,7 @@
     @include content-center(column);
 
     h2 {
-        @include font-sizing($font-xlarge, $text-color-primary, 700);
+        @include font-sizing($font-xxlarge, $text-color-primary, 700);
         margin-bottom: 0.8rem;
     }
 
@@ -106,6 +107,7 @@ footer {
         .footer-navs {
             @include flex($justify: flex-start);
             gap: 1rem;
+            list-style-type: none;
 
             a {
                 @include font-sizing($font-normal, $text-color-secondary);
@@ -127,8 +129,8 @@ footer {
 
 // Main content area 
 main {
-    width: 70%;
-    min-height: 80vh;
+    width: 75%;
+    min-height: 100vh;
     margin: 3rem auto;
 }
 
@@ -173,11 +175,10 @@ main {
             .search-btn {
                 @include font-sizing($font-normal, $text-white);
                 width: auto;
-                border: 0;
-                outline: 0;
                 padding: 1rem 3rem;
                 background-color: $color-primary;
                 border-radius: 0.5rem;
+                cursor: pointer;
             }
         }
     }
@@ -225,6 +226,262 @@ main {
     }
 }
 
+
+// jobs page
+.jobs-container {
+    @include flex(3rem, $align: flex-start);
+
+    .jobs-filter {
+        width: 30%;
+        @include flex(1.5rem, column, $align: stretch);
+        background-color: transparent;
+
+
+        .close-div {
+            display: none;
+        }
+
+        .search-jobs {
+            @include flex(1rem, column);
+            width: 100%;
+            position: relative;
+
+            .search-wrap {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    @include font-sizing($font-medium, $text-color-secondary, 700);
+                    margin-bottom: 0.3rem;
+                }
+
+                .search-field {
+                    border: 0;
+                    outline: 0;
+                    font-size: $font-small;
+                    padding: 1rem 0.8rem;
+                    border-radius: 5px;
+                    @include border($color-primary);
+                }
+            }
+
+            .faLocationCrosshairs {
+                color: $text-color-p;
+                position: absolute;
+                right: 0.3rem;
+                bottom: 7.5rem;
+            }
+
+            .search-btn {
+                @include font-sizing($font-normal, $text-white);
+                width: 100%;
+                padding: 0.7rem 3rem;
+                background-color: $color-primary;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+
+        h3 {
+            @include font-sizing($font-normal, $text-color-secondary, 600);
+            margin-bottom: 0.5rem;
+        }
+
+        .sort-by {
+            select {
+                @include font-sizing($font-small, $text-color-secondary);
+                padding: 0.3rem 0;
+            }
+        }
+
+        button {
+            display: block;
+            background-color: transparent;
+            @include font-sizing($font-small, $text-color-secondary);
+            transition: color 0.3s;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+
+    }
+
+    .jobs-found-container {
+        width: 70%;
+
+        .header-title {
+            @include flex;
+            @include font-sizing($font-medium, $text-color-secondary, 700);
+            margin-bottom: 1rem;
+
+            .filter-search {
+                display: none;
+                @include border($color-primary);
+                padding: 4px 6px;
+                border-radius: 5px;
+                @include font-sizing($font-small, $text-color-secondary, 600);
+            }
+        }
+
+        .header-action {
+            @include flex;
+
+            div {
+                display: flex;
+                gap: 0.5rem;
+
+                .all {
+                    @extend .btn;
+                    font-weight: 400;
+                }
+
+                .new {
+                    @extend .btn-outline;
+                }
+            }
+
+            .creater-alert {
+                display: flex;
+                align-items: center;
+                background-color: transparent;
+                @include font-sizing($font-small, $text-color-secondary, 700);
+
+                .icon {
+                    color: $color-primary;
+                    margin-right: 0.625rem;
+                }
+            }
+        }
+
+        .job-cards {
+            @include flex(1rem, column);
+            margin-top: 1.5rem;
+
+            .job-card {
+                width: 100%;
+                @include border-dir(top);
+                padding: 1.2rem 0.5rem;
+                transition: all 0.3s;
+
+                &:hover {
+                    background-color: $bg-color-light;
+                    @include border-dir(top, $color-primary);
+                }
+
+                .title {
+                    @include flex;
+
+                    a {
+                        overflow-x: hidden;
+                        white-space: nowrap;
+                        @include font-sizing($font-medium, $color-primary, 700);
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .location {
+                    @include font-sizing($font-normal, $text-color-secondary, 600);
+                }
+
+                .description {
+                    @include font-sizing($font-small, $text-color-secondary, 400);
+                    margin: 0.5rem 0;
+                }
+
+                .posting-time {
+                    @extend .btn-tag;
+                }
+            }
+        }
+    }
+}
+
+
+// Job details 
+.job-details-container {
+    display: flex;
+    flex-direction: column;
+
+    .details-header {
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        @include border-dir(bottom, $border-color-2);
+
+        h1 {
+            @include font-sizing($font-xlarge, $text-color-secondary, 600);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-meta {
+            .meta-top {
+                @include flex(1rem, row, flex-start);
+                @include font-sizing($font-normal, $text-color-secondary, 500);
+
+                .icon {
+                    @include font-sizing($font-medium, $color-secondary);
+                    padding-right: 0.5rem;
+                }
+            }
+
+            .meta-bottom {
+                margin-top: 1.5rem;
+
+                p {
+                    @extend .btn-tag;
+                }
+            }
+        }
+    }
+
+    .details-body {
+        @include flex(2rem, column, flex-start, stretch);
+
+        h2 {
+            @include font-sizing($font-normal, $text-color-secondary, 700);
+            margin-bottom: 0.3rem;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        ul {
+            padding-left: 1rem;
+        }
+
+        p,
+        li {
+            @include font-sizing($font-normal, $text-color-secondary);
+        }
+    }
+
+    .job-action {
+        @include flex(3rem, column);
+        width: 50%;
+        margin: 4rem auto;
+
+        .appy-now {
+            @extend .btn;
+            padding: 1rem 6rem;
+        }
+
+        .save-share {
+            @include flex(2rem);
+            width: 100%;
+
+            button {
+                @extend .btn-outline;
+                padding: 0.625rem 0;
+                width: 100%;
+            }
+        }
+    }
+}
 
 
 

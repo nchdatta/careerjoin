@@ -1,4 +1,5 @@
 @import "colors";
+@import "variables";
 
 
 @media screen and (max-width: 767px) {
@@ -24,12 +25,13 @@
             display: block;
         }
 
-        position: absolute;
         width: 100%;
         height: 100%;
         background-color: rgb(231, 231, 231);
-        top: 0;
         padding: 2rem 1rem;
+        position: fixed;
+        top: 0;
+        z-index: 20;
 
         .close-menu {
             position: absolute;
@@ -42,6 +44,7 @@
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
+            overflow-y: hidden;
         }
 
     }
@@ -114,6 +117,80 @@
                 flex-wrap: wrap;
                 row-gap: 0.5rem;
             }
+        }
+    }
+
+
+    // Jobs list 
+    .jobs-container {
+        @include flex(1rem, column);
+
+        .jobs-filter {
+            width: 100%;
+            height: 100%;
+            background-color: $bg-color-light;
+            padding: 1rem 0.5rem;
+            display: none;
+            overflow-y: auto;
+
+            &.show {
+                display: flex;
+                gap: 0.5rem;
+                position: fixed;
+                top: 0;
+                z-index: 10;
+            }
+
+            .close-div {
+                width: 100%;
+                position: relative;
+                display: block;
+
+                .close-btn {
+                    position: absolute;
+                    top: 0;
+                    right: 0.5rem;
+                }
+            }
+
+        }
+
+        .jobs-found-container {
+            width: 100%;
+
+            .header-title {
+                .available-jobs {
+                    display: none;
+                }
+
+                .filter-search {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    // job details 
+    .job-details-container {
+
+        .details-header {
+            h1 {
+                font-size: $font-large;
+            }
+        }
+
+        .details-body {
+            h2 {
+                font-size: $font-small;
+            }
+
+            p {
+                font-size: $font-small;
+            }
+        }
+
+        .job-action {
+            width: 100%;
         }
     }
 }

@@ -16,11 +16,11 @@
     color: $color;
 }
 
-@mixin flex($gap: 2rem, $dir: row, $justify: space-between) {
+@mixin flex($gap: 2rem, $dir: row, $justify: space-between, $align: center) {
     display: flex;
     flex-direction: $dir;
     justify-content: $justify;
-    align-items: center;
+    align-items: $align;
     gap: $gap;
 }
 

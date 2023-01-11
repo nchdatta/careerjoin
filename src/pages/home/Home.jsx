@@ -7,6 +7,10 @@ const Home = () => {
         <div id='home'>
             {/* Search jobs  */}
             <SearchJobs />
+            {/* Total published jobs  */}
+            <div className='published-jobs'>
+                <p><span className='text-primary'>2,130</span> jobs published in Bangladesh</p>
+            </div>
             <CardsSection />
         </div>
     );
