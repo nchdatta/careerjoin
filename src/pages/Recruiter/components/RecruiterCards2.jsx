@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const RecruiterCards2 = ({ img, h3, h2, p, className }) => {
     return (
         <div className={`recruiter-cards2 ${className}`}>

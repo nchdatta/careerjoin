@@ -223,4 +223,26 @@
         }
     }
 
+
+    // Post CV page 
+    .postcv-container {
+        .cards {
+            width: 100%;
+
+            .card {
+                @include flex(0.625rem, column);
+
+                .content {
+                    width: 80%;
+                    text-align: center;
+                }
+
+                .btn-div {
+                    width: 70%;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
 }

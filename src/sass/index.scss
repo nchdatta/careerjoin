@@ -604,6 +604,68 @@ main {
     }
 }
 
+// Post CV page 
+.postcv-container {
+    text-align: center;
+
+    .header {
+        h1 {
+            @include font-sizing($font-xlarge, $text-color-primary, 700);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            @include font-sizing($font-normal, $text-color-p);
+            text-align: center;
+        }
+    }
+
+    .cards {
+        @include flex(4rem, column, $align: stretch);
+        margin: 4rem auto;
+        width: 70%;
+
+        .card {
+            @include flex(2rem, row, flex-start);
+
+            .img {
+                width: 6rem;
+                object-fit: cover;
+            }
+
+            .content {
+                width: 40%;
+                text-align: left;
+
+                h2 {
+                    @include font-sizing($font-medium, $text-color-primary, 700);
+                    margin-bottom: 0.625rem;
+                }
+
+                p {
+                    @include font-sizing($font-small, $text-color-p);
+                }
+            }
+
+            .btn-div {
+                width: 20%;
+                margin: 0 0 0 auto;
+
+                .btn {
+                    padding: 0.7rem 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
 
 
 // Loading component 

@@ -1176,6 +1176,97 @@ main {
   margin-bottom: 1rem;
 }
 
+.postcv-container {
+  text-align: center;
+}
+
+.postcv-container .header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.postcv-container .header p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #74737e;
+  text-align: center;
+}
+
+.postcv-container .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 4rem;
+  margin: 4rem auto;
+  width: 70%;
+}
+
+.postcv-container .cards .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.postcv-container .cards .card .img {
+  width: 6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.postcv-container .cards .card .content {
+  width: 40%;
+  text-align: left;
+}
+
+.postcv-container .cards .card .content h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 0.625rem;
+}
+
+.postcv-container .cards .card .content p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #74737e;
+}
+
+.postcv-container .cards .card .btn-div {
+  width: 20%;
+  margin: 0 0 0 auto;
+}
+
+.postcv-container .cards .card .btn-div .btn, .postcv-container .cards .card .btn-div .navbar-navs .login-btn, .navbar-navs .postcv-container .cards .card .btn-div .login-btn, .postcv-container .cards .card .btn-div .jobs-container .jobs-found-container .header-action div .all, .jobs-container .jobs-found-container .header-action div .postcv-container .cards .card .btn-div .all, .postcv-container .cards .card .btn-div .job-details-container .job-action .appy-now, .job-details-container .job-action .postcv-container .cards .card .btn-div .appy-now {
+  padding: 0.7rem 0;
+}
+
 .loading-wrap {
   width: 100%;
   min-height: 80vh;
@@ -1461,5 +1552,32 @@ main {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
+  }
+  .postcv-container .cards {
+    width: 100%;
+  }
+  .postcv-container .cards .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0.625rem;
+  }
+  .postcv-container .cards .card .content {
+    width: 80%;
+    text-align: center;
+  }
+  .postcv-container .cards .card .btn-div {
+    width: 70%;
+    margin: 0;
   }
 }
