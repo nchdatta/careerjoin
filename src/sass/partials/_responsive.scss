@@ -259,9 +259,21 @@
         }
     }
 
+
+    // Change Password
     .change-password-form {
         width: 100%;
     }
 
+    // Edit Profile 
+    .edit-profile {
+        .edit-form {
+            width: 100%;
+
+            .full-name {
+                @include flex(0, column, stretch, stretch);
+            }
+        }
+    }
 
 }

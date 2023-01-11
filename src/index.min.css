@@ -1551,6 +1551,31 @@ main {
   gap: 0;
 }
 
+.edit-profile .edit-form {
+  width: 50%;
+}
+
+.edit-profile .edit-form .full-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.edit-profile .edit-form .btn-light {
+  width: 100%;
+}
+
 .loading-wrap {
   width: 100%;
   min-height: 80vh;
@@ -1885,5 +1910,24 @@ main {
   }
   .change-password-form {
     width: 100%;
+  }
+  .edit-profile .edit-form {
+    width: 100%;
+  }
+  .edit-profile .edit-form .full-name {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: stretch;
+        -ms-flex-pack: stretch;
+            justify-content: stretch;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    gap: 0;
   }
 }

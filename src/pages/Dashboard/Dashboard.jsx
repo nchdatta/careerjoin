@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 import ChangePassword from './pages/ChangePassword';
 import CoverLetter from './pages/CoverLetter';
 import Documents from './pages/Documents';
+import EditProfile from './pages/EditProfile';
 import Profile from './pages/Profile';
 import SavedJobs from './pages/SavedJobs';
 import SentApplications from './pages/SentApplications';
@@ -17,6 +18,7 @@ const Dashboard = () => {
                 <Routes>
                     <Route index element={<Profile />} />
                     <Route path='change-password' element={<ChangePassword />} />
+                    <Route path='edit-profile' element={<EditProfile />} />
                     <Route path='saved-jobs' element={<SavedJobs />} />
                     <Route path='applications' element={<SentApplications />} />
                     <Route path='cover-letter' element={<CoverLetter />} />

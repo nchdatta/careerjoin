@@ -756,10 +756,30 @@ main {
     }
 }
 
+
+
+// Change Password 
 .change-password-form {
     width: 40%;
     @include flex(0, $dir: column, $align: stretch);
 }
+
+
+// Edit Profile 
+.edit-profile {
+    .edit-form {
+        width: 50%;
+
+        .full-name {
+            @include flex;
+        }
+
+        .btn-light {
+            width: 100%;
+        }
+    }
+}
+
 
 
 
