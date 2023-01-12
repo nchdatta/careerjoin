@@ -10,11 +10,11 @@ const EditProfile = () => {
             <Title title='Edit Profile Information' />
             <form className='edit-form'>
                 <div className="full-name">
-                    <TextField name='firstname' label='First name' placeholder='Enter first name' />
+                    <TextField name='firstname' label='First name' placeholder='Enter first name' required />
                     <TextField name='lastname' label='Last name' placeholder='Enter last name' />
                 </div>
-                <TextField name='email' label='Email address' placeholder='Enter your email address' />
-                <TextField name='phone' label='Phone number' placeholder='+8801300421744' />
+                <TextField name='email' label='Email address' placeholder='Enter your email address' required />
+                <TextField name='phone' label='Phone number' placeholder='+8801300421744' required />
                 <TextField name='street' label='Street adrress' placeholder='Street 9A, West Dhanmondi ' />
                 <DropDown name='state' label='State/ region' data={['Dhaka', 'Sylhet', 'Chottogram', 'Rajshahi', 'Rangpur', 'Barishal', 'Khulna']} />
                 <DropDown name='country' label='Select country' data={['Bangladesh', 'United States', 'India']} />

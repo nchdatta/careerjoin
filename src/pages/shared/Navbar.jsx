@@ -7,17 +7,15 @@ import NavigationButton from '../../components/NavigationButton';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Navbar = () => {
-    const { user, loginWithRedirect, isAuthenticated, isLoading } = useAuth0();
+    const { loginWithRedirect, isAuthenticated } = useAuth0();
     const [isOpen, setIsOpen] = useState(false);
-    if (isLoading) {
-        return <div>Loading ...</div>;
-    }
 
     const menus = [
         { id: 1001, label: "Search jobs", to: '/', icon: faSearch },
         { id: 1002, label: "Post a job", to: '/recruiter', icon: faBullhorn },
         { id: 1003, label: "Post your CV", to: '/post-cv', icon: faPlusCircle },
     ];
+
 
     return (
         <header>

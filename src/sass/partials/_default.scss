@@ -76,6 +76,10 @@ select {
     margin-left: 1rem;
 }
 
+.mb-3 {
+    margin-bottom: 2rem;
+}
+
 .text-primary {
     color: $color-primary;
 }
@@ -94,11 +98,13 @@ select {
     cursor: pointer;
 }
 
+.flex {
+    @include flex;
+}
+
 .btn {
     display: block;
-    font-size: $font-normal;
-    font-weight: 600;
-    color: $text-white;
+    @include font-sizing($font-normal, $text-white, 600);
     background-color: $color-primary;
     border: 0;
     outline: 0;
@@ -154,19 +160,24 @@ select {
 }
 
 .input-group {
-    @include flex(0.3rem, $dir: column, $align: stretch);
+    width: 100%;
+    @include flex(0.425rem, $dir: column, $align: stretch);
     margin-bottom: 0.825rem;
 
     .input-label {
         display: block;
         @include font-sizing($font-normal, $text-color-secondary, 500);
+
+        .required {
+            color: $color-danger;
+        }
     }
 
     .input-field {
         display: block;
         font-size: $font-normal;
         @include font-sizing($font-small, $text-color-secondary, 500);
-        padding: 0.5rem 0.4rem;
+        padding: 0.625rem 0.625rem;
         border: 1px solid $border-color-1;
         border-radius: 5px;
 
@@ -181,5 +192,28 @@ select {
         &:focus {
             outline: 1px solid $color-primary;
         }
+    }
+
+    .dropdown-field {
+        @extend .input-field;
+        padding: 0.74rem 0.4rem;
+    }
+}
+
+// Radio button design 
+.radio {
+    @include flex($gap: 1rem, $justify: stretch);
+    background-color: $bg-color-1;
+    padding: 0.8rem 4rem;
+    border-radius: 3rem;
+    @include border($bg-color-1, 2px);
+    transition: border 0.3s;
+
+    &:hover {
+        @include border($color-secondary, 2px);
+    }
+
+    label {
+        @include font-sizing($font-medium, $color-secondary, 700);
     }
 }

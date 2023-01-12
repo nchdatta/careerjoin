@@ -223,6 +223,13 @@
         }
     }
 
+    // Packages page 
+    .posting-packages {
+        .packages {
+            width: 100%;
+        }
+    }
+
 
     // Post CV page 
     .postcv-container {
@@ -272,6 +279,32 @@
 
             .full-name {
                 @include flex(0, column, stretch, stretch);
+            }
+        }
+    }
+
+
+    // Post Job page 
+    .postjob-container {
+        width: 100%;
+
+        .job-details {
+            .row {
+                @include grid(2, 1rem);
+            }
+        }
+    }
+
+
+    // Job Preview Details 
+    .preview-details {
+        .content {
+            .header {
+                .row {
+                    flex-wrap: wrap;
+                    column-gap: 1rem;
+                    row-gap: 0.5rem;
+                }
             }
         }
     }

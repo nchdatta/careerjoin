@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import img from "../../assets/images/job-offer.svg";
 import ChooseCard from './components/ChooseCard';
+import Header from './components/Header';
 import RecruiterCards from './components/RecruiterCards';
 import RecruiterCards2 from './components/RecruiterCards2';
 
@@ -14,18 +15,15 @@ const Recruiter = () => {
 
     return (
         <div className='recruiter-container'>
-            <div className='header'>
-                <img src={img} alt="" />
-                <h1>Your next hire is here</h1>
-                <p>Publish your jobs on Careerjoin and start hiring the best candidates.</p>
-            </div>
+            <Header title='Your next hire is here' subTitle='Publish your jobs on Careerjoin and start hiring the best candidates.' />
 
             <RecruiterCards
                 h2='Post jobs directly'
                 h3='Publish your vacancies and start receiving applications.'
-                p={['Be featured in the top search results', 'Get quality applications directly to your inbox', 'Only ৳ 2,000 for 30 days']}
+                p={['Be featured in the top search results', 'Get quality applications directly to your inbox', 'Only ৳ 1,000 for 30 days']}
                 btn='Post job'
                 btnOutline='See packages'
+                href={['/recruiter/post-job', '/recruiter/packages']}
             />
             <RecruiterCards
                 h2='Automatically index jobs'
@@ -33,6 +31,7 @@ const Recruiter = () => {
                 p={['Have your jobs updated on a daily basis', 'Promote the jobs that you want on demand', 'Track the performance of your campaigns on the dedicated recruiter interface', 'Start connecting with the candidates you deserve now.']}
                 btn='Submit your website'
                 btnOutline='Solutions to boost visibity'
+                // href={['/recruiter/post-job', '/recruiter/packages']}
                 className='row-reverse'
             />
 

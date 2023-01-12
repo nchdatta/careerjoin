@@ -1,10 +1,13 @@
 import React from 'react';
 import NavLinkCustom from '../../../components/NavLinkCustom';
 import { faPersonRifle, faUnlockKeyhole, faBookmark, faShare, faEnvelope, faFileArchive, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
+    const { logout } = useAuth0();
+
     const menus = [
         { label: 'Profile', to: '/profile', icon: faPersonRifle },
         { label: 'Change Password', to: '/profile/change-password', icon: faUnlockKeyhole },
@@ -19,7 +22,7 @@ const Sidebar = () => {
                 {menus.map(menu => <li>
                     <NavLinkCustom label={menu.label} to={menu.to} icon={menu.icon} />
                 </li>)}
-                <li><Link title='Sign out'><FontAwesomeIcon icon={faRightFromBracket} className='mr-1' /><span className='nav-label'>Sign out</span></Link></li>
+                <li><Link onClick={() => logout()} title='Sign out'><FontAwesomeIcon icon={faRightFromBracket} className='mr-1' /><span className='nav-label'>Sign out</span></Link></li>
             </ul>
         </div>
     );

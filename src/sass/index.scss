@@ -63,6 +63,7 @@
 
     .login-btn {
         @extend .btn;
+        font-weight: 400;
     }
 }
 
@@ -480,25 +481,25 @@ main {
 }
 
 
-// Post job page 
-.recruiter-container {
-    .header {
-        @include flex(1rem, column);
+// Recruiter post page
+.post-header {
+    @include flex(1rem, column);
 
-        img {
-            width: 15%;
-        }
-
-        h1 {
-            @include font-sizing($font-xlarge, $text-color-primary, 700);
-        }
-
-        p {
-            @include font-sizing($font-normal, $text-color-p);
-            text-align: center;
-        }
+    img {
+        width: 15%;
     }
 
+    h1 {
+        @include font-sizing($font-xlarge, $text-color-primary, 700);
+    }
+
+    p {
+        @include font-sizing($font-normal, $text-color-p);
+        text-align: center;
+    }
+}
+
+.recruiter-container {
     .recruiter-cards {
         @include flex(4rem, row, space-around);
         margin: 4rem 0;
@@ -528,6 +529,7 @@ main {
 
             .action-btns {
                 @include flex(1rem, row, flex-start);
+                flex-wrap: wrap;
             }
         }
 
@@ -604,6 +606,60 @@ main {
     }
 }
 
+
+// Packages 
+.posting-packages {
+    margin: 3rem 0;
+    text-align: center;
+
+    .title {
+        @include font-sizing($font-large, $text-color-primary, 700);
+        margin-bottom: 2rem;
+    }
+
+    .packages {
+        width: 70%;
+        margin: 2rem auto;
+        @include flex(0.5rem, column, stretch, stretch);
+
+        .card {
+            @include flex;
+            padding: 2rem 1.5rem;
+            @include border($border-color-2, 2px);
+            border-radius: 0.5rem;
+            transition: border 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                @include border($color-primary, 2px);
+            }
+
+            p {
+                @include font-sizing($font-normal, $text-color-p);
+            }
+
+            .bold {
+                @include font-sizing($font-large, $text-color-primary, 700);
+            }
+        }
+    }
+
+    .contact {
+        margin: 6rem 0;
+
+        h3 {
+            @include font-sizing($font-normal, $text-color-primary, 600);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            @include font-sizing($font-small, $text-color-p);
+        }
+    }
+}
+
+
+
 // Post CV page 
 .postcv-container {
     text-align: center;
@@ -673,7 +729,7 @@ main {
     .outlet-content {
         flex-grow: 1;
         @include border-dir(left, $border-color-2, 2px);
-        padding: 0 2rem;
+        padding: 0 0 0 0.625rem;
         min-height: 80vh;
         overflow-x: auto;
 
@@ -782,6 +838,113 @@ main {
 
 
 
+// Post Job page 
+.postjob-container {
+    width: 65%;
+    margin: 4rem auto;
+
+    .job-details {
+        .row {
+            @include grid(2);
+        }
+
+        .about-company {
+            margin: 3rem 0;
+        }
+
+        .btn {
+            margin: 0 0 0 auto;
+            padding: 0.625rem 4rem;
+            font-weight: 600;
+        }
+    }
+}
+
+// Job Preview Details 
+.preview-details {
+    .content {
+        border: 2px dashed $border-color-2;
+        padding: 2rem;
+        margin-bottom: 3rem;
+
+        .header {
+            h2 {
+                @include font-sizing($font-large, $text-color-secondary, 600);
+                text-align: left;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                @include font-sizing($font-normal, $text-color-secondary);
+                margin-bottom: 0.4rem;
+            }
+
+            .row {
+                @include flex($justify: flex-start);
+                @include border-dir(bottom, $border-color-2);
+                padding-bottom: 0.8rem;
+
+                p {
+                    @include font-sizing($font-medium, $text-color-secondary, 600);
+                }
+            }
+        }
+
+        .details {
+            margin: 1.5rem 0;
+            @include flex(2rem, column, flex-start, flex-start);
+
+            .job-details {
+                @include font-sizing($font-normal, $text-color-secondary);
+            }
+
+            p {
+                @include font-sizing($font-normal, $text-color-primary, 500);
+                margin-bottom: 0.4rem;
+            }
+
+            .company-details {
+                p {
+                    @include font-sizing($font-small, $text-color-secondary);
+                }
+            }
+        }
+
+    }
+
+    h2 {
+        @include font-sizing($font-large, $color-primary, 700);
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .action-btns {
+        @include flex;
+    }
+}
+
+
+// Job details 
+.job-details {
+    .flex {
+        margin-top: 3rem;
+    }
+}
+
+
+
+// Paymnet Method Component 
+.payment-method-wapper {
+    .method-selection {
+        @include flex($gap: 1rem, $dir: column);
+        margin-bottom: 6rem;
+
+        h2 {
+            @include font-sizing($font-large, $text-color-primary, 700);
+            margin-bottom: 1.2rem;
+        }
+    }
+}
 
 
 
