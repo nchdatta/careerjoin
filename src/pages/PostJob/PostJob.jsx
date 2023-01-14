@@ -11,13 +11,10 @@ const leftIcon = <FontAwesomeIcon icon={faAngleLeft} />;
 const rightIcon = <FontAwesomeIcon icon={faAngleRight} />;
 
 const PostJob = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const [page, setPage] = useState(0);
     const steps = ['Job Details', 'Preview Details', 'Billing Info', 'Payment'];
 
-    // if (errors) {
-    //     console.log('Errors', errors)
-    // }
     const handlePrev = () => {
         setPage(current => current - 1);
 

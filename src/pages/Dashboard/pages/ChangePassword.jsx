@@ -1,15 +1,18 @@
 import React from 'react';
-import PasswordField from '../../../components/PasswordField';
+import { useForm } from 'react-hook-form';
+import Input from '../../../components/Input';
 import Title from '../components/Title';
 
 const ChangePassword = () => {
+    const { register } = useForm();
+
     return (
         <div className='change-password'>
             <Title title='Change Password' />
             <form className='change-password-form'>
-                <PasswordField name='password' label='Previous Password' required />
-                <PasswordField name='new-password' label='New Password' required />
-                <PasswordField name='retype-password' label='Retype Password' required />
+                <Input type='password' name='password' label='Previous Password' placeholder='Password***' register={register} required />
+                <Input type='password' name='new-password' label='New Password' placeholder='Password***' register={register} required />
+                <Input type='password' name='retype-password' label='Retype Password' placeholder='Password***' register={register} required />
                 <button type='submit' className='btn-light'>Change</button>
             </form>
         </div>

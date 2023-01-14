@@ -34,6 +34,13 @@ input::placeholder {
   color: #b6b3b3;
 }
 
+.btn-base, button, .btn, .navbar-navs .login-btn, .jobs-container .jobs-found-container .header-action div .all, .job-details-container .job-action .appy-now, .btn-light, .btn-outline, .jobs-container .jobs-found-container .header-action div .new, .job-details-container .job-action .save-share button, .btn-tag, .jobs-container .jobs-found-container .job-cards .job-card .posting-time, .job-details-container .details-header .job-meta .meta-bottom p,
+select {
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+}
+
 button {
   cursor: pointer;
 }
@@ -48,13 +55,6 @@ button:disabled {
 button:disabled:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
-}
-
-.btn-base, .btn, .navbar-navs .login-btn, .jobs-container .jobs-found-container .header-action div .all, .job-details-container .job-action .appy-now, .btn-light, .btn-outline, .jobs-container .jobs-found-container .header-action div .new, .job-details-container .job-action .save-share button, .btn-tag, .jobs-container .jobs-found-container .job-cards .job-card .posting-time, .job-details-container .details-header .job-meta .meta-bottom p,
-select {
-  outline: 0;
-  border: 0;
-  background-color: transparent;
 }
 
 .text-xl {
@@ -159,8 +159,8 @@ select {
   border-radius: 2rem;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
-  -webkit-animation: all 0.3s;
-          animation: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .btn:hover, .navbar-navs .login-btn:hover, .jobs-container .jobs-found-container .header-action div .all:hover, .job-details-container .job-action .appy-now:hover {
@@ -190,8 +190,8 @@ select {
   padding: 0.5rem 1.5rem;
   border-radius: 5px;
   cursor: pointer;
-  -webkit-animation: all 0.3s;
-          animation: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .btn-light:hover {
@@ -221,8 +221,8 @@ select {
   border-radius: 2rem;
   padding: 0.4rem 2rem;
   cursor: pointer;
-  -webkit-animation: all 0.3s;
-          animation: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .btn-outline:hover, .jobs-container .jobs-found-container .header-action div .new:hover, .job-details-container .job-action .save-share button:hover {
@@ -279,8 +279,8 @@ select {
   font-weight: 500;
   line-height: 1.5;
   color: #4b4956;
-  padding: 0.625rem 0.625rem;
   border: 1px solid #c8cad2;
+  padding: 0.625rem 0.625rem;
   border-radius: 5px;
 }
 
@@ -317,7 +317,7 @@ select {
 }
 
 .input-group .input-field:focus, .input-group .dropdown-field:focus {
-  outline: 1px solid #428ee6;
+  border: 1px solid #428ee6;
 }
 
 .input-group .dropdown-field {
@@ -622,15 +622,20 @@ main {
 }
 
 #home .search-jobs-wrap .search-jobs .search-btn {
+  width: auto;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #ffffff;
-  width: auto;
-  padding: 1rem 3rem;
   background-color: #428ee6;
+  padding: 1rem 3rem;
   border-radius: 0.5rem;
-  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#home .search-jobs-wrap .search-jobs .search-btn:hover {
+  background-color: #2d74c8;
 }
 
 #home .published-jobs {
@@ -1580,8 +1585,6 @@ main {
 
 .postcv-container .cards .card .btn-div .btn, .postcv-container .cards .card .btn-div .navbar-navs .login-btn, .navbar-navs .postcv-container .cards .card .btn-div .login-btn, .postcv-container .cards .card .btn-div .jobs-container .jobs-found-container .header-action div .all, .jobs-container .jobs-found-container .header-action div .postcv-container .cards .card .btn-div .all, .postcv-container .cards .card .btn-div .job-details-container .job-action .appy-now, .job-details-container .job-action .postcv-container .cards .card .btn-div .appy-now {
   padding: 0.7rem 0;
-  -webkit-box-shadow: 0 0 5px #2d74c8;
-          box-shadow: 0 0 5px #2d74c8;
 }
 
 .dasboard-container {
@@ -2432,8 +2435,8 @@ main {
   .postjob-container .job-details .row {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
   }
   .preview-details .content .header .row {
@@ -2442,5 +2445,14 @@ main {
     -webkit-column-gap: 1rem;
             column-gap: 1rem;
     row-gap: 0.5rem;
+  }
+  .postjob-container .stepper .step-item p {
+    font-size: 0.75rem;
+  }
+  .postjob-container .stepper .step-item.active p {
+    font-size: 0.75rem;
+  }
+  .postjob-container .stepper .step-item.completed p {
+    font-size: 0.75rem;
   }
 }

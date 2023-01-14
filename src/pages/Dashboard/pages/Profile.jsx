@@ -2,6 +2,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import Title from '../components/Title';
 
+
 const Profile = () => {
     return (
         <div className='profile'>

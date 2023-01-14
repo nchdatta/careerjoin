@@ -1,23 +1,22 @@
 import React from 'react';
 import DropDown from '../../../components/DropDown';
-import EmailField from '../../../components/EmailField';
-import TextField from '../../../components/TextField';
+import Input from '../../../components/Input';
 
 const BillingInfo = ({ register }) => {
     return (
         <div className='job-details'>
             <div className="row">
-                <TextField name='firstname' label='First name' register={register} required />
-                <TextField name='surname' label='Surname' register={register} required />
+                <Input name='firstname' label='First name' register={register} required />
+                <Input name='surname' label='Surname' register={register} required />
             </div>
             <div className="row mb-3">
-                <EmailField name='email' label='Email' register={register} required />
-                <TextField name='phone' label='Phone number' register={register} />
+                <Input type='email' name='email' label='Email' register={register} required />
+                <Input name='phone' label='Phone number' register={register} />
             </div>
-            <TextField name='street' label='Address' placeholder='9A, West Dhanmondi' register={register} required />
+            <Input name='street' label='Address' placeholder='9A, West Dhanmondi' register={register} required />
             <div className="row">
-                <TextField name='state' label='State/ region' register={register} required />
-                <TextField name='zip' label='Zip/ postal code' register={register} />
+                <Input name='state' label='State/ region' register={register} required />
+                <Input name='zip' label='Zip/ postal code' register={register} />
             </div>
             <DropDown name='country' label='Country' data={['Bangladesh', 'United States']} register={register} required />
         </div>

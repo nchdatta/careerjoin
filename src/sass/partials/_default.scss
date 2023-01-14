@@ -29,7 +29,15 @@ input::placeholder {
     color: $placeholder-color;
 }
 
+.btn-base,
+select {
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+}
+
 button {
+    @extend .btn-base;
     cursor: pointer;
 
     &:disabled {
@@ -42,14 +50,6 @@ button {
     &:disabled:hover {
         box-shadow: none;
     }
-}
-
-
-.btn-base,
-select {
-    outline: 0;
-    border: 0;
-    background-color: transparent;
 }
 
 .text-xl {
@@ -123,7 +123,7 @@ select {
     border-radius: 2rem;
     padding: 0.5rem 1.5rem;
     cursor: pointer;
-    animation: all 0.3s;
+    transition: all 0.3s;
 
     &:hover {
         background-color: $color-secondary;
@@ -138,7 +138,7 @@ select {
     padding: 0.5rem 1.5rem;
     border-radius: 5px;
     cursor: pointer;
-    animation: all 0.3s;
+    transition: all 0.3s;
 
     &:hover {
         background-color: $color-secondary;
@@ -149,11 +149,11 @@ select {
     @extend .btn-base;
     @include flex($gap: 1rem, $justify: center);
     @include font-sizing($font-normal, $text-color-primary, 500);
-    border: 2px solid $color-primary;
+    @include border($color-primary, 2px);
     border-radius: 2rem;
     padding: 0.4rem 2rem;
     cursor: pointer;
-    animation: all 0.3s;
+    transition: all 0.3s;
 
     &:hover {
         box-shadow: 0 0 2px $color-secondary;
@@ -187,8 +187,8 @@ select {
         display: block;
         font-size: $font-normal;
         @include font-sizing($font-small, $text-color-secondary, 500);
+        @include border($border-color-1);
         padding: 0.625rem 0.625rem;
-        border: 1px solid $border-color-1;
         border-radius: 5px;
 
         &::placeholder {
@@ -196,11 +196,11 @@ select {
         }
 
         &:hover {
-            border: 1px solid $color-primary;
+            @include border($color-primary);
         }
 
         &:focus {
-            outline: 1px solid $color-primary;
+            @include border($color-primary);
         }
     }
 

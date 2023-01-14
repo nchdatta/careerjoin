@@ -10,7 +10,7 @@ const useCountries = () => {
                 for (const country of data) {
                     countries.push(country.name.common);
                 }
-                const sortedCountries = countries.sort();
+                const sortedCountries = countries.filter(c => c.length <= 12).sort();
                 return setCountries(sortedCountries);
             })
     }, []);

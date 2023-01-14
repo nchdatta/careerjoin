@@ -176,12 +176,16 @@ main {
             }
 
             .search-btn {
-                @include font-sizing($font-normal, $text-white);
                 width: auto;
-                padding: 1rem 3rem;
+                @include font-sizing($font-normal, $text-white);
                 background-color: $color-primary;
+                padding: 1rem 3rem;
                 border-radius: 0.5rem;
-                cursor: pointer;
+                transition: all 0.3s;
+
+                &:hover {
+                    background-color: $color-secondary;
+                }
             }
         }
     }
@@ -711,7 +715,6 @@ main {
 
                 .btn {
                     padding: 0.7rem 0;
-                    box-shadow: 0 0 5px $color-secondary;
                 }
             }
         }
