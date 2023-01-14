@@ -115,7 +115,7 @@ select {
 
 .btn {
     @extend .btn-base;
-    @include flex($gap: 1rem);
+    @include flex($gap: 1rem, $justify: center);
     @include font-sizing($font-normal, $text-white, 600);
     background-color: $color-primary;
     border: 0;
@@ -132,7 +132,7 @@ select {
 
 .btn-light {
     @extend .btn-base;
-    @include flex($gap: 1rem);
+    @include flex($gap: 1rem, $justify: center);
     @include font-sizing($font-normal, $text-white);
     background-color: $color-primary;
     padding: 0.5rem 1.5rem;
@@ -147,7 +147,7 @@ select {
 
 .btn-outline {
     @extend .btn-base;
-    @include flex($gap: 1rem);
+    @include flex($gap: 1rem, $justify: center);
     @include font-sizing($font-normal, $text-color-primary, 500);
     border: 2px solid $color-primary;
     border-radius: 2rem;

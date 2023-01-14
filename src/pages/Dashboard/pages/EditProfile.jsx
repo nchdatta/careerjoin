@@ -1,9 +1,11 @@
 import React from 'react';
 import DropDown from '../../../components/DropDown';
 import TextField from '../../../components/TextField';
+import useCountries from '../../../hooks/useCountries';
 import Title from '../components/Title';
 
 const EditProfile = () => {
+    const [countries] = useCountries();
 
     return (
         <div className='edit-profile'>
@@ -17,7 +19,7 @@ const EditProfile = () => {
                 <TextField name='phone' label='Phone number' placeholder='+8801300421744' required />
                 <TextField name='street' label='Street adrress' placeholder='Street 9A, West Dhanmondi ' />
                 <DropDown name='state' label='State/ region' data={['Dhaka', 'Sylhet', 'Chottogram', 'Rajshahi', 'Rangpur', 'Barishal', 'Khulna']} />
-                <DropDown name='country' label='Select country' data={['Bangladesh', 'United States', 'India']} />
+                <DropDown name='country' label='Select country' data={countries} />
 
                 <button type='submit' className='btn-light'>Update</button>
             </form>

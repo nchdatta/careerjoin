@@ -52,7 +52,7 @@ const Recruiter = () => {
             <div className="choose-section">
                 <h2 className='title'>Why choose Careerjoin?</h2>
                 <div className='content'>
-                    {choosedata.map(data => <ChooseCard title={data.title} p={data.p} img={data.img} />)}
+                    {choosedata.map((data, i) => <ChooseCard key={i} title={data.title} p={data.p} img={data.img} />)}
                 </div>
             </div>
 

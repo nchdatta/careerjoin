@@ -12,7 +12,7 @@ const RecruiterCards = ({ h2, h3, p, btn, btnOutline, href = ['', ''], className
                 <h2>{h2}</h2>
                 <h3>{h3}</h3>
                 <div>
-                    {p.map(p => <p><FontAwesomeIcon icon={faCheckCircle} className='icon' /> {p}</p>)}
+                    {p.map((p, i) => <p key={i}><FontAwesomeIcon icon={faCheckCircle} className='icon' /> {p}</p>)}
                 </div>
                 <div className='action-btns'>
                     <NavLink to={href[0]} className='btn'>{btn}</NavLink>

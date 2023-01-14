@@ -14,7 +14,7 @@ const PostCV = () => {
                 <p>Adding your CV allows you to apply very quickly to many jobs from any device.</p>
             </div>
             <div className="cards">
-                {carddata.map(card => <Card title={card.title} subtitle={card.subtitle} btnText={card.btnText} img={card.img} />)}
+                {carddata.map((card, i) => <Card key={i} title={card.title} subtitle={card.subtitle} btnText={card.btnText} img={card.img} />)}
             </div>
         </div>
     );

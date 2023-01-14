@@ -19,7 +19,7 @@ const Sidebar = () => {
     return (
         <div className='dashboard-sidebar'>
             <ul className="navbar-navs">
-                {menus.map(menu => <li>
+                {menus.map((menu, i) => <li key={i}>
                     <NavLinkCustom label={menu.label} to={menu.to} icon={menu.icon} />
                 </li>)}
                 {user && <li><Link onClick={() => logout()} title='Sign out'><FontAwesomeIcon icon={faRightFromBracket} className='mr-1' /><span className='nav-label'>Sign out</span></Link></li>}
