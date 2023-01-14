@@ -11,7 +11,7 @@ const EditProfile = () => {
             <form className='edit-form'>
                 <div className="full-name">
                     <TextField name='firstname' label='First name' placeholder='Enter first name' required />
-                    <TextField name='lastname' label='Last name' placeholder='Enter last name' />
+                    <TextField name='surname' label='Surname' placeholder='Enter surname' />
                 </div>
                 <TextField name='email' label='Email address' placeholder='Enter your email address' required />
                 <TextField name='phone' label='Phone number' placeholder='+8801300421744' required />

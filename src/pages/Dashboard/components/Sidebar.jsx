@@ -6,7 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
-    const { logout } = useAuth0();
+    const { user, logout } = useAuth0();
 
     const menus = [
         { label: 'Profile', to: '/profile', icon: faPersonRifle },
@@ -22,7 +22,7 @@ const Sidebar = () => {
                 {menus.map(menu => <li>
                     <NavLinkCustom label={menu.label} to={menu.to} icon={menu.icon} />
                 </li>)}
-                <li><Link onClick={() => logout()} title='Sign out'><FontAwesomeIcon icon={faRightFromBracket} className='mr-1' /><span className='nav-label'>Sign out</span></Link></li>
+                {user && <li><Link onClick={() => logout()} title='Sign out'><FontAwesomeIcon icon={faRightFromBracket} className='mr-1' /><span className='nav-label'>Sign out</span></Link></li>}
             </ul>
         </div>
     );

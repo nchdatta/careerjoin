@@ -7,10 +7,10 @@ const ChangePassword = () => {
         <div className='change-password'>
             <Title title='Change Password' />
             <form className='change-password-form'>
-                <PasswordField name='password' label='Previous Password' />
-                <PasswordField name='new-password' label='New Password' />
-                <PasswordField name='retype-password' label='Retype Password' />
-                <button type='button' className='btn-light'>Change</button>
+                <PasswordField name='password' label='Previous Password' required />
+                <PasswordField name='new-password' label='New Password' required />
+                <PasswordField name='retype-password' label='Retype Password' required />
+                <button type='submit' className='btn-light'>Change</button>
             </form>
         </div>
     );

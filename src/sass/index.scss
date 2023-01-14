@@ -729,7 +729,7 @@ main {
     .outlet-content {
         flex-grow: 1;
         @include border-dir(left, $border-color-2, 2px);
-        padding: 0 0 0 0.625rem;
+        padding: 0 1.5rem;
         min-height: 80vh;
         overflow-x: auto;
 
@@ -841,8 +841,68 @@ main {
 // Post Job page 
 .postjob-container {
     width: 65%;
+    @include flex(4rem, column, stretch, stretch);
     margin: 4rem auto;
 
+    // Stepper 
+    .stepper {
+        @include flex($gap: 0);
+
+        .step-item {
+            position: relative;
+            width: 25%;
+            @include flex(0.5rem, column);
+
+            &:not(:first-child)::before {
+                content: '';
+                width: 100%;
+                height: 3px;
+                background-color: $bg-color-light;
+                position: absolute;
+                top: 25%;
+                right: 50%;
+                transform: translateY(-25%);
+            }
+
+            P {
+                @include font-sizing($font-normal, $text-color-p);
+            }
+
+            &.active {
+                .step {
+                    background-color: $color-primary;
+                    color: $text-white;
+                }
+
+                p {
+                    @include font-sizing($font-normal, $color-primary);
+                }
+            }
+
+            &.completed {
+                .step {
+                    background-color: $color-green;
+                    color: $text-white;
+                }
+
+                p {
+                    @include font-sizing($font-normal, $color-green);
+                }
+            }
+
+            .step {
+                width: 1.75rem;
+                height: 1.75rem;
+                @include flex($gap: 0, $justify: center);
+                background-color: $bg-color-light;
+                border-radius: 100%;
+                z-index: 5;
+            }
+        }
+    }
+
+
+    // Job Details 
     .job-details {
         .row {
             @include grid(2);
@@ -858,98 +918,83 @@ main {
             font-weight: 600;
         }
     }
-}
 
-// Job Preview Details 
-.preview-details {
-    .content {
-        border: 2px dashed $border-color-2;
-        padding: 2rem;
-        margin-bottom: 3rem;
+    // Job Preview Details 
+    .preview-details {
+        .content {
+            border: 2px dashed $border-color-2;
+            padding: 2rem;
+            margin-bottom: 3rem;
 
-        .header {
-            h2 {
-                @include font-sizing($font-large, $text-color-secondary, 600);
-                text-align: left;
-                margin-bottom: 1rem;
-            }
-
-            p {
-                @include font-sizing($font-normal, $text-color-secondary);
-                margin-bottom: 0.4rem;
-            }
-
-            .row {
-                @include flex($justify: flex-start);
-                @include border-dir(bottom, $border-color-2);
-                padding-bottom: 0.8rem;
+            .header {
+                h2 {
+                    @include font-sizing($font-large, $text-color-secondary, 600);
+                    text-align: left;
+                    margin-bottom: 1rem;
+                }
 
                 p {
-                    @include font-sizing($font-medium, $text-color-secondary, 600);
+                    @include font-sizing($font-normal, $text-color-secondary);
+                    margin-bottom: 0.4rem;
+                }
+
+                .row {
+                    @include flex($justify: flex-start);
+                    @include border-dir(bottom, $border-color-2);
+                    padding-bottom: 0.8rem;
+
+                    p {
+                        @include font-sizing($font-medium, $text-color-secondary, 600);
+                    }
                 }
             }
-        }
 
-        .details {
-            margin: 1.5rem 0;
-            @include flex(2rem, column, flex-start, flex-start);
+            .details {
+                margin: 1.5rem 0;
+                @include flex(2rem, column, flex-start, flex-start);
 
-            .job-details {
-                @include font-sizing($font-normal, $text-color-secondary);
-            }
+                .job-details {
+                    @include font-sizing($font-normal, $text-color-secondary);
+                }
 
-            p {
-                @include font-sizing($font-normal, $text-color-primary, 500);
-                margin-bottom: 0.4rem;
-            }
-
-            .company-details {
                 p {
-                    @include font-sizing($font-small, $text-color-secondary);
+                    @include font-sizing($font-normal, $text-color-primary, 500);
+                    margin-bottom: 0.4rem;
+                }
+
+                .company-details {
+                    p {
+                        @include font-sizing($font-small, $text-color-secondary);
+                    }
                 }
             }
+
         }
-
-    }
-
-    h2 {
-        @include font-sizing($font-large, $color-primary, 700);
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .action-btns {
-        @include flex;
-    }
-}
-
-
-// Job details 
-.job-details {
-    .flex {
-        margin-top: 3rem;
-    }
-}
-
-
-
-// Paymnet Method Component 
-.payment-method-wapper {
-    .method-selection {
-        @include flex($gap: 1rem, $dir: column);
-        margin-bottom: 6rem;
 
         h2 {
-            @include font-sizing($font-large, $text-color-primary, 700);
-            margin-bottom: 1.2rem;
+            @include font-sizing($font-large, $color-primary, 700);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .action-btns {
+            @include flex;
+        }
+    }
+
+    // Paymnet Method Component 
+    .payment-method-wapper {
+        .method-selection {
+            @include flex($gap: 1rem, $dir: column);
+            margin-bottom: 6rem;
+
+            h2 {
+                @include font-sizing($font-large, $text-color-primary, 700);
+                margin-bottom: 1.2rem;
+            }
         }
     }
 }
-
-
-
-
-
 
 
 

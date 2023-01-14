@@ -1,4 +1,4 @@
-import { faExternalLink, faAngleLeft, faLocationDot, faClock, faMoneyCheckDollar, faHourglass } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLink, faLocationDot, faClock, faMoneyCheckDollar, faHourglass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -34,10 +34,6 @@ const PreviewDetails = () => {
             </div>
 
             <h2>Your job offer is ready to be posted!</h2>
-            <div className="action-btns">
-                <button className='btn-outline'><FontAwesomeIcon icon={faAngleLeft} className='icon' /> Back</button>
-                <button className='btn'>Pay to post</button>
-            </div>
         </div>
     );
 };

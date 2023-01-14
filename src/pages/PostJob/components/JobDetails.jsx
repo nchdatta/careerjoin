@@ -31,8 +31,6 @@ const JobDetails = () => {
                 <TextArea name='companyabout' label='About your company' />
                 <TextField name='recieveapplication' label='Receive applications on email' placeholder='recieve@email.com' required />
             </div>
-            <button className='btn'>Preview</button>
-
         </div>
     );
 };

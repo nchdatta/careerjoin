@@ -38,7 +38,19 @@ button {
   cursor: pointer;
 }
 
-button,
+button:disabled {
+  border: 1px solid #c8cad2;
+  background-color: #f4f4f4;
+  color: #a4a4a9;
+  cursor: default;
+}
+
+button:disabled:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-base, .btn, .navbar-navs .login-btn, .jobs-container .jobs-found-container .header-action div .all, .job-details-container .job-action .appy-now, .btn-light, .btn-outline, .jobs-container .jobs-found-container .header-action div .new, .job-details-container .job-action .save-share button, .btn-tag, .jobs-container .jobs-found-container .job-cards .job-card .posting-time, .job-details-container .details-header .job-meta .meta-bottom p,
 select {
   outline: 0;
   border: 0;
@@ -103,7 +115,6 @@ select {
   line-height: 1.5;
   color: #2d74c8;
   padding-right: 0.5rem;
-  cursor: pointer;
 }
 
 .flex {
@@ -124,7 +135,20 @@ select {
 }
 
 .btn, .navbar-navs .login-btn, .jobs-container .jobs-found-container .header-action div .all, .job-details-container .job-action .appy-now {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5;
@@ -144,14 +168,25 @@ select {
 }
 
 .btn-light {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #ffffff;
   background-color: #428ee6;
-  border: 0;
-  outline: 0;
   padding: 0.5rem 1.5rem;
   border-radius: 5px;
   cursor: pointer;
@@ -164,11 +199,24 @@ select {
 }
 
 .btn-outline, .jobs-container .jobs-found-container .header-action div .new, .job-details-container .job-action .save-share button {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
   font-size: 1rem;
   font-weight: 500;
+  line-height: 1.5;
   color: #000000;
-  outline: 0;
   border: 2px solid #428ee6;
   border-radius: 2rem;
   padding: 0.4rem 2rem;
@@ -1574,7 +1622,7 @@ main {
       -ms-flex-positive: 1;
           flex-grow: 1;
   border-left: 2px solid #e1e3eb;
-  padding: 0 0 0 0.625rem;
+  padding: 0 1.5rem;
   min-height: 80vh;
   overflow-x: auto;
 }
@@ -1741,7 +1789,122 @@ main {
 
 .postjob-container {
   width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 4rem;
   margin: 4rem auto;
+}
+
+.postjob-container .stepper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0;
+}
+
+.postjob-container .stepper .step-item {
+  position: relative;
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+}
+
+.postjob-container .stepper .step-item:not(:first-child)::before {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: #f4f4f4;
+  position: absolute;
+  top: 25%;
+  right: 50%;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
+}
+
+.postjob-container .stepper .step-item P {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #74737e;
+}
+
+.postjob-container .stepper .step-item.active .step {
+  background-color: #428ee6;
+  color: #ffffff;
+}
+
+.postjob-container .stepper .step-item.active p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #428ee6;
+}
+
+.postjob-container .stepper .step-item.completed .step {
+  background-color: #13b413;
+  color: #ffffff;
+}
+
+.postjob-container .stepper .step-item.completed p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #13b413;
+}
+
+.postjob-container .stepper .step-item .step {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0;
+  background-color: #f4f4f4;
+  border-radius: 100%;
+  z-index: 5;
 }
 
 .postjob-container .job-details .row {
@@ -1762,13 +1925,13 @@ main {
   font-weight: 600;
 }
 
-.preview-details .content {
+.postjob-container .preview-details .content {
   border: 2px dashed #e1e3eb;
   padding: 2rem;
   margin-bottom: 3rem;
 }
 
-.preview-details .content .header h2 {
+.postjob-container .preview-details .content .header h2 {
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.5;
@@ -1777,7 +1940,7 @@ main {
   margin-bottom: 1rem;
 }
 
-.preview-details .content .header p {
+.postjob-container .preview-details .content .header p {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -1785,7 +1948,7 @@ main {
   margin-bottom: 0.4rem;
 }
 
-.preview-details .content .header .row {
+.postjob-container .preview-details .content .header .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1804,14 +1967,14 @@ main {
   padding-bottom: 0.8rem;
 }
 
-.preview-details .content .header .row p {
+.postjob-container .preview-details .content .header .row p {
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.5;
   color: #4b4956;
 }
 
-.preview-details .content .details {
+.postjob-container .preview-details .content .details {
   margin: 1.5rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1829,14 +1992,14 @@ main {
   gap: 2rem;
 }
 
-.preview-details .content .details .job-details {
+.postjob-container .preview-details .content .details .job-details {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #4b4956;
 }
 
-.preview-details .content .details p {
+.postjob-container .preview-details .content .details p {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -1844,14 +2007,14 @@ main {
   margin-bottom: 0.4rem;
 }
 
-.preview-details .content .details .company-details p {
+.postjob-container .preview-details .content .details .company-details p {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
   color: #4b4956;
 }
 
-.preview-details h2 {
+.postjob-container .preview-details h2 {
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 1.5;
@@ -1860,7 +2023,7 @@ main {
   margin-bottom: 2rem;
 }
 
-.preview-details .action-btns {
+.postjob-container .preview-details .action-btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1877,11 +2040,7 @@ main {
   gap: 2rem;
 }
 
-.job-details .flex {
-  margin-top: 3rem;
-}
-
-.payment-method-wapper .method-selection {
+.postjob-container .payment-method-wapper .method-selection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1899,7 +2058,7 @@ main {
   margin-bottom: 6rem;
 }
 
-.payment-method-wapper .method-selection h2 {
+.postjob-container .payment-method-wapper .method-selection h2 {
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 1.5;
@@ -2241,6 +2400,9 @@ main {
   }
   .dasboard-container .dashboard-sidebar .navbar-navs .nav-label {
     display: none;
+  }
+  .dasboard-container .outlet-content {
+    padding: 0 0 0 0.625rem;
   }
   .change-password-form {
     width: 100%;

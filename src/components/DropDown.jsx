@@ -1,7 +1,6 @@
 import React from 'react';
 
 const DropDown = ({ name, label, data, required }) => {
-    console.log(data)
     return (
         <div className='input-group'>
             <label htmlFor={name} className='input-label'>{label} <span className='required'>{required && '*'}</span></label>

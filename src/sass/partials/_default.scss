@@ -31,9 +31,21 @@ input::placeholder {
 
 button {
     cursor: pointer;
+
+    &:disabled {
+        @include border($border-color-1);
+        background-color: $bg-color-light;
+        color: $text-color-placeholder;
+        cursor: default;
+    }
+
+    &:disabled:hover {
+        box-shadow: none;
+    }
 }
 
-button,
+
+.btn-base,
 select {
     outline: 0;
     border: 0;
@@ -95,7 +107,6 @@ select {
 .icon {
     @include font-sizing($font-medium, $color-secondary);
     padding-right: 0.5rem;
-    cursor: pointer;
 }
 
 .flex {
@@ -103,7 +114,8 @@ select {
 }
 
 .btn {
-    display: block;
+    @extend .btn-base;
+    @include flex($gap: 1rem);
     @include font-sizing($font-normal, $text-white, 600);
     background-color: $color-primary;
     border: 0;
@@ -119,11 +131,10 @@ select {
 }
 
 .btn-light {
-    display: block;
+    @extend .btn-base;
+    @include flex($gap: 1rem);
     @include font-sizing($font-normal, $text-white);
     background-color: $color-primary;
-    border: 0;
-    outline: 0;
     padding: 0.5rem 1.5rem;
     border-radius: 5px;
     cursor: pointer;
@@ -135,11 +146,9 @@ select {
 }
 
 .btn-outline {
-    display: block;
-    font-size: $font-normal;
-    font-weight: 500;
-    color: $text-color-primary;
-    outline: 0;
+    @extend .btn-base;
+    @include flex($gap: 1rem);
+    @include font-sizing($font-normal, $text-color-primary, 500);
     border: 2px solid $color-primary;
     border-radius: 2rem;
     padding: 0.4rem 2rem;
@@ -152,6 +161,7 @@ select {
 }
 
 .btn-tag {
+    @extend .btn-base;
     display: inline-block;
     @include font-sizing($font-small, $text-color-secondary, 500);
     background-color: $bg-color-1;
