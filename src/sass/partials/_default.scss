@@ -96,6 +96,10 @@ button {
     color: $color-primary;
 }
 
+.text-danger {
+    color: $color-danger;
+}
+
 .bg-danger {
     background-color: $color-danger !important;
 
@@ -226,4 +230,8 @@ button {
     label {
         @include font-sizing($font-medium, $color-secondary, 700);
     }
+}
+
+.row {
+    @include flex;
 }

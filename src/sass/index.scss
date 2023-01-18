@@ -756,28 +756,28 @@ main {
         // Profile page 
         .profile {
             .avatar {
-                @include flex($justify: center);
-                background-color: $bg-color-light;
-                border-radius: 50%;
-                height: 7rem;
-                width: 7rem;
-
-                p {
-                    @include font-sizing($font-large, $text-color-secondary, 500);
-                    text-transform: uppercase;
+                img {
+                    height: 7rem;
+                    width: 7rem;
+                    border-radius: 50%;
                 }
             }
 
             .personal-details {
-                margin: 1.5rem 0;
+                margin: 1rem 0;
 
                 h2 {
-                    @include font-sizing($font-medium, $text-color-primary, 500);
+                    @include font-sizing($font-large, $text-color-primary, 700);
+                    // text-transform: capitalize;
+                }
+
+                .nickname {
+                    @include font-sizing($font-small, $text-color-secondary);
                     margin-bottom: 0.5rem;
                 }
 
                 p {
-                    @include font-sizing($font-normal, $text-color-secondary, 400);
+                    @include font-sizing($font-medium, $text-color-secondary);
                     margin-bottom: 0.3rem;
                 }
 
@@ -785,6 +785,10 @@ main {
                     @include border-dir(left, $border-color-2, 3px);
                     padding: 0 0.5rem;
                     margin-left: 2rem;
+                }
+
+                span {
+                    font-size: $font-xsmall;
                 }
             }
 
@@ -998,6 +1002,26 @@ main {
                 margin-bottom: 1.2rem;
             }
         }
+    }
+}
+
+
+// Login Page 
+.login-container {
+    @include content-center(column);
+
+    img {
+        width: 8rem;
+        height: auto;
+    }
+
+    p {
+        @include font-sizing($font-normal, $text-color-p);
+        margin: 1rem;
+    }
+
+    .row {
+        gap: 0.5rem;
     }
 }
 

@@ -101,6 +101,10 @@ button:disabled:hover {
   color: #428ee6;
 }
 
+.text-danger {
+  color: #ea4a4a;
+}
+
 .bg-danger {
   background-color: #ea4a4a !important;
 }
@@ -356,6 +360,23 @@ button:disabled:hover {
   font-weight: 700;
   line-height: 1.5;
   color: #2d74c8;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
 }
 
 .navbar {
@@ -1649,49 +1670,33 @@ main {
   position: absolute;
 }
 
-.dasboard-container .outlet-content .profile .avatar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 2rem;
-  background-color: #f4f4f4;
-  border-radius: 50%;
+.dasboard-container .outlet-content .profile .avatar img {
   height: 7rem;
   width: 7rem;
-}
-
-.dasboard-container .outlet-content .profile .avatar p {
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #4b4956;
-  text-transform: uppercase;
+  border-radius: 50%;
 }
 
 .dasboard-container .outlet-content .profile .personal-details {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 .dasboard-container .outlet-content .profile .personal-details h2 {
-  font-size: 1.125rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 700;
   line-height: 1.5;
   color: #000000;
+}
+
+.dasboard-container .outlet-content .profile .personal-details .nickname {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4b4956;
   margin-bottom: 0.5rem;
 }
 
 .dasboard-container .outlet-content .profile .personal-details p {
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.5;
   color: #4b4956;
@@ -1702,6 +1707,10 @@ main {
   border-left: 3px solid #e1e3eb;
   padding: 0 0.5rem;
   margin-left: 2rem;
+}
+
+.dasboard-container .outlet-content .profile .personal-details span {
+  font-size: 0.75rem;
 }
 
 .dasboard-container .outlet-content .profile .btn, .dasboard-container .outlet-content .profile .navbar-navs .login-btn, .navbar-navs .dasboard-container .outlet-content .profile .login-btn, .dasboard-container .outlet-content .profile .jobs-container .jobs-found-container .header-action div .all, .jobs-container .jobs-found-container .header-action div .dasboard-container .outlet-content .profile .all, .dasboard-container .outlet-content .profile .job-details-container .job-action .appy-now, .job-details-container .job-action .dasboard-container .outlet-content .profile .appy-now {
@@ -2070,6 +2079,41 @@ main {
   margin-bottom: 1.2rem;
 }
 
+.login-container {
+  width: 100%;
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-container img {
+  width: 8rem;
+  height: auto;
+}
+
+.login-container p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #74737e;
+  margin: 1rem;
+}
+
+.login-container .row {
+  gap: 0.5rem;
+}
+
 .loading-wrap {
   width: 100%;
   min-height: 80vh;
@@ -2155,7 +2199,6 @@ main {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     padding: 0 0.625rem;
-    position: relative;
   }
   .navbar .open-menu {
     display: block;

@@ -7,6 +7,7 @@ import NotFound from "./pages/ErrorPage/NotFound";
 import Home from "./pages/home/Home";
 import Job from "./pages/job/Job";
 import Jobs from "./pages/jobs/Jobs";
+import Login from "./pages/Login/Login";
 import PostCV from "./pages/PostCV/PostCV";
 import PostJob from "./pages/PostJob/PostJob";
 import Packages from "./pages/Recruiter/pages/Packages";
@@ -28,7 +29,7 @@ function App() {
           <Route path="/recruiter/packages" element={<Packages />} />
           <Route path="/recruiter/post-job" element={<PostJob />} />
           <Route path="/post-cv" element={<PostCV />} />
-          <Route path="/login" />
+          <Route path="/login" element={<Login />} />
           <Route path="/profile/*" element={<Dashboard />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/job/:id" element={<Job />} />
