@@ -5,7 +5,6 @@
 
 // Navbar 
 .navbar {
-    overflow: hidden;
     width: 100%;
     height: 5rem;
     display: flex;
@@ -66,6 +65,30 @@
     .login-btn {
         @extend .btn;
         font-weight: 400;
+    }
+
+    // Dropdown navs 
+    .dropdown-parent {
+        list-style-type: none;
+        position: relative;
+
+
+        .dropdown-navs {
+            display: none;
+            min-width: 8rem;
+        }
+
+        &:hover {
+            .dropdown-navs {
+                @include flex(0.625rem, column, stretch, stretch);
+                position: absolute;
+                right: 0;
+                z-index: 10;
+                background-color: $bg-color-light;
+                border-radius: 5px;
+                padding: 1rem 0.625rem;
+            }
+        }
     }
 }
 

@@ -380,7 +380,6 @@ button:disabled:hover {
 }
 
 .navbar {
-  overflow: hidden;
   width: 100%;
   height: 5rem;
   display: -webkit-box;
@@ -467,6 +466,39 @@ button:disabled:hover {
 
 .navbar-navs .login-btn {
   font-weight: 400;
+}
+
+.navbar-navs .dropdown-parent {
+  list-style-type: none;
+  position: relative;
+}
+
+.navbar-navs .dropdown-parent .dropdown-navs {
+  display: none;
+  min-width: 8rem;
+}
+
+.navbar-navs .dropdown-parent:hover .dropdown-navs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 0.625rem;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  padding: 1rem 0.625rem;
 }
 
 .navbar-navs-parent-mobile {
@@ -2235,6 +2267,10 @@ main {
         -ms-flex-align: center;
             align-items: center;
     gap: 1.5rem;
+  }
+  .navbar-navs-parent-mobile .navbar-navs hr {
+    width: 70%;
+    background-color: #f4f4f4;
   }
   main {
     width: 100%;

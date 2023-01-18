@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faBullhorn, faPlusCircle, faBars, faClose, faCircleUser, } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faBullhorn, faPlusCircle, faBars, faClose, faCircleUser, faRightFromBracket, faUser, } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import NavLinkCustom from '../../components/NavLinkCustom';
 import { Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import NavigationButton from '../../components/NavigationButton';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Navbar = () => {
-    const { loginWithRedirect, isAuthenticated } = useAuth0();
+    const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
     const [isOpen, setIsOpen] = useState(false);
 
     const menus = [
@@ -33,7 +33,12 @@ const Navbar = () => {
                         <li><NavLinkCustom label='Post your CV' to="post-cv" icon={faPlusCircle} /></li>
                         {
                             isAuthenticated
-                                ? <li><Link to='/profile'><FontAwesomeIcon icon={faCircleUser} size='2x' /></Link></li>
+                                ? <ul className='dropdown-parent'><FontAwesomeIcon icon={faCircleUser} size='2x' />
+                                    <div className='dropdown-navs'>
+                                        <li><NavLinkCustom label='Profile' to='/profile' icon={faUser} /></li>
+                                        <li><Link onClick={() => logout()} title='Sign out'><FontAwesomeIcon icon={faRightFromBracket} className='mr-1' /><span className='nav-label'>Sign out</span></Link></li>
+                                    </div>
+                                </ul>
                                 : <li><NavigationButton handleClick={loginWithRedirect} label='Sign in' className='login-btn' /></li>
                         }
                     </ul>
@@ -46,9 +51,14 @@ const Navbar = () => {
                     {menus.map(menu => <li key={menu.id} >
                         <NavLinkCustom label={menu.label} to={menu.to} icon={menu.icon} />
                     </li>)}
+                    <hr />
                     {
                         isAuthenticated
-                            ? <li><Link to='/profile'><FontAwesomeIcon icon={faCircleUser} size='2x' /></Link></li>
+                            ? <>
+                                <li><NavLinkCustom label='Profile' to='/profile' icon={faUser} /></li>
+                                <li><Link onClick={() => logout()} title='Sign out'><FontAwesomeIcon icon={faRightFromBracket} className='mr-1' /><span className='nav-label'>Sign out</span></Link></li>
+
+                            </>
                             : <li><NavigationButton handleClick={loginWithRedirect} label='Sign in' className='login-btn' /></li>
                     }
                 </ul>
